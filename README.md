@@ -2,6 +2,8 @@
 Game for FriendBot.
 
 ## Roadmap
+- [ ] Minify with Gulp or Grunt;
+- [ ] Use PhoneGap;
 - [ ] Progress bar with legend;
 - [ ] Life bar;
 - [ ] Timer seconds;
