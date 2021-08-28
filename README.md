@@ -11,5 +11,5 @@ Game for FriendBot.
 - [ ] Button (and with animation);
 - [ ] Shadow click animation (triangle, square, buttons and more);
 - [ ] Login, finish and try again windows;
-- [ ] Each phase (with cutscene);
+- [ ] Each phase (with cutscene and audio);
 - [ ] Images, effects, sprites, songs, fonts and more.
