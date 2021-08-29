@@ -1,0 +1,85 @@
+.progress{
+    --progress-size: 400px;
+
+    border: var(--border);
+    border-color: var(--grey);
+    height: var(--height-bars);
+    width: var(--progress-size);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: var(--space);
+    background-color: var(--light-grey);
+    border-radius: var(--height-bars);
+}
+
+
+.progress .progress__bar{
+    background-color: var(--green);
+    width: 0;
+    position: absolute;
+    transition: width var(--time-transition);
+    height: calc(var(--height-bars) - (var(--border-width) * 2));
+    border-radius: var(--height-bars);
+}
+
+.progress .progress__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: calc(var(--half-space) * -1);
+    width: calc(var(--progress-size) + var(--space));
+    left: calc((var(--border-width) + var(--half-space)) * -1);
+}
+
+.progress .progress__item{
+    --progress-item-size: calc(var(--height-bars) + var(--half-space));
+    --progress-icon-size: 24px;
+
+    border-radius: 50%;
+    border: var(--border);
+    border-color: var(--grey);
+    height: var(--progress-item-size);
+    width: var(--progress-item-size);
+    background-color: var(--light-grey);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: var(--progress-icon-size);
+    transition: background-color var(--time-transition);
+}
+
+.progress .progress__item.progress__item--active{
+    background-color: var(--green);
+}
+
+.progress .progress__item.progress__item--bridge{
+    background-size: calc(var(--progress-icon-size) + 10px);
+    background-image: url(../assets/icon-bridge.png);
+}
+
+.progress .progress__item.progress__item--sword{
+    background-image: url(../assets/icon-sword.png);
+}
+
+.progress .progress__item.progress__item--chest{
+    background-image: url(../assets/icon-chest.png);
+}
+
+.progress .progress__item.progress__item--castle{
+    background-size: calc(var(--progress-icon-size) + 2px);
+    background-image: url(../assets/icon-castle.png);
+}
+
+.progress .progress__title{
+    top: calc(var(--height-bars) + var(--half-space));
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    max-width: var(--progress-size);
+    width: 100%;
+    hyphens: auto;
+    word-break: break-word;
+    text-align: center;
+}

@@ -16,4 +16,5 @@
     --border: var(--border-width) solid var(--light-grey);
     --radius: 2px;
     --time-transition: 1s;
+    --height-bars: 40px;
 }

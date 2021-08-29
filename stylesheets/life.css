@@ -1,7 +1,6 @@
 .life{
     --life-bar-items: 5;
-    --life-item-size: 40px;
-    --life-bar-width: calc(var(--life-item-size) * var(--life-bar-items));
+    --life-bar-width: calc(var(--height-bars) * var(--life-bar-items));
 
     display: flex;
     flex-direction: column;
@@ -21,7 +20,7 @@
 }
 
 .life .life__item{
-    width: var(--life-item-size);
+    width: var(--height-bars);
     background-color: var(--light-grey);
     border-right: var(--border);
     border-color: var(--black);

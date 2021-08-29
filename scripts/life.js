@@ -14,7 +14,7 @@ const life = {
                 lastItem = item;
                 lastIndex = index;
             }
-        })
+        });
 
         if(lastItem) lastItem.classList.remove(this.activeItemClass);
         if(lastIndex === 0) config.lost();

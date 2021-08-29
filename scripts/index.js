@@ -3,8 +3,12 @@ const config = {
         this.step = 1;
 
         life.reset();
+        progress.reset();
     },
     lost: function(){
+
+    },
+    win: function(){
 
     }
 };

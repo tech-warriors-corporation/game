@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="stylesheets/reset.css">
         <link rel="stylesheet" href="stylesheets/variables.css">
         <link rel="stylesheet" href="stylesheets/life.css">
+        <link rel="stylesheet" href="stylesheets/progress.css">
         <link rel="stylesheet" href="stylesheets/styles.css">
     </head>
     <body>
@@ -27,9 +28,21 @@
                 </div>
             </div>
 
+            <div data-progress class="progress" aria-label="Barra de progresso do Rei Arthur">
+                <div data-progress-bar class="progress__bar"></div>
+                <div class="progress__content">
+                    <span data-progress-item class="progress__item progress__item--bridge"></span>
+                    <span data-progress-item class="progress__item progress__item--sword"></span>
+                    <span data-progress-item class="progress__item progress__item--chest"></span>
+                    <span data-progress-item class="progress__item progress__item--castle"></span>
+                </div>
+                <span data-progress-title class="progress__title"></span>
+            </div>
+
         </div>
 
         <script src="scripts/life.js"></script>
+        <script src="scripts/progress.js"></script>
         <script src="scripts/index.js"></script>
     </body>
 </html>
