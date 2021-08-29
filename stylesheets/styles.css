@@ -1,0 +1,22 @@
+:root, html, body{
+    background-color: var(--black);
+    font-family: var(--font-text);
+    font-size: var(--space);
+    color: var(--black);
+}
+
+.game{
+    margin: 0 auto;
+    background-color: var(--white);
+    position: revert;
+    width: var(--width);
+    min-width: var(--width);
+    max-width: var(--width);
+    height: var(--height);
+    min-height: var(--height);
+    max-height: var(--height);
+}
+
+.title{
+    font-family: var(--font-title);
+}

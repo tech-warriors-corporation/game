@@ -1,0 +1,33 @@
+.life{
+    --life-bar-items: 5;
+    --life-item-size: 40px;
+    --life-bar-width: calc(var(--life-item-size) * var(--life-bar-items));
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: var(--half-space);
+    top: var(--half-space);
+}
+
+.life .life__bar{
+    display: grid;
+    height: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    border: var(--border);
+    border-color: var(--black);
+    border-radius: var(--radius);
+    border-right: 0;
+}
+
+.life .life__item{
+    width: var(--life-item-size);
+    background-color: var(--light-grey);
+    border-right: var(--border);
+    border-color: var(--black);
+    transition: background-color var(--time-transition);
+}
+
+.life .life__item.life__item--active{
+    background-color: var(--red);
+}

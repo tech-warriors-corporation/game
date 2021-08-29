@@ -1,0 +1,19 @@
+:root{
+    --font-title: 'Rampart One', cursive;
+    --font-text: 'Skranji', cursive;
+    --width: 100vw;
+    --height: 100vh;
+    --black: #000;
+    --white: #fff;
+    --red: #d50000;
+    --light-grey: #e0e0e0;
+    --grey: #bdbdbd;
+    --green: #00e676;
+    --yellow: #ffeb3b;
+    --space: 16px;
+    --half-space: calc(var(--space) / 2);
+    --border-width: 4px;
+    --border: var(--border-width) solid var(--light-grey);
+    --radius: 2px;
+    --time-transition: 1s;
+}
