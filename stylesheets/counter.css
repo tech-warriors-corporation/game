@@ -1,0 +1,22 @@
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    width: 84px;
+    height: 72px;
+    border: var(--border);
+    background-color: var(--white);
+    position: absolute;
+    right: var(--half-space);
+    top: var(--half-space);
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: border-top-color var(--time-transition), border-bottom-color var(--time-transition), border-right-color var(--time-transition), border-left-color var(--time-transition), color var(--time-transition), background-color var(--time-transition);
+}
+
+.counter--alert{
+    border-color: var(--red);
+    color: var(--red);
+    background-color: rgba(var(--red-rgb), .12);
+}

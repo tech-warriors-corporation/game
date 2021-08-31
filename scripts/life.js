@@ -17,6 +17,6 @@ const life = {
         });
 
         if(lastItem) lastItem.classList.remove(this.activeItemClass);
-        if(lastIndex === 0) config.lost();
+        if(lastIndex === 0) config.lose();
     }
 };
