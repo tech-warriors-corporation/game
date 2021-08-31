@@ -4,7 +4,7 @@ Game for FriendBot.
 ## Roadmap
 - [ ] Use PhoneGap;
 - [ ] Progress bar with legend;
-- [ ] Minify images, css, and js, concatenate their;
+- [ ] Minify images, css, and js, concatenate their and others;
 - [ ] Life bar;
 - [ ] Timer seconds;
 - [ ] Character with sprite;
