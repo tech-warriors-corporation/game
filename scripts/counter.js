@@ -5,6 +5,9 @@ const counter = {
     interval: null,
     _stop: false,
     alertClass: 'counter--alert',
+    setSecondsText: function(seconds){
+        this.element.textContent = `${seconds}s`;
+    },
     toggle: function(){
         this._stop = !this._stop;
     },
@@ -15,10 +18,12 @@ const counter = {
         this._seconds = seconds;
         this.seconds = seconds;
 
+        this.setSecondsText(this.seconds);
+
         this.interval = setInterval(() => {
             if(this._stop) return;
 
-            this.element.textContent = `${this.seconds}s`
+            this.setSecondsText(this.seconds);
 
             if(this.seconds <= 10) this.element.classList.add(this.alertClass);
             else this.element.classList.remove(this.alertClass);

@@ -1,5 +1,11 @@
 const config = {
-    init: function(){
+    init: function(first){
+        if(first){
+            home.show('Em busca da coroa', 'Jogar', './assets/home-arthur-and-merlin.png');
+
+            return;
+        }
+
         this.step = 1;
         this.lost = false;
 
@@ -15,4 +21,4 @@ const config = {
     }
 };
 
-config.init();
+config.init(true);

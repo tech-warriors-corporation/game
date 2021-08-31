@@ -8,6 +8,10 @@ const home = {
         this.title.textContent = title;
         this.button.textContent = buttonName;
         this.element.classList.add(this.activeClass);
-        this.button.onclick = () => this.element.classList.remove(this.activeClass);
+
+        this.button.onclick = () => {
+            config.init();
+            this.element.classList.remove(this.activeClass);
+        }
     }
 };

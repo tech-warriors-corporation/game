@@ -20,6 +20,7 @@ time, mark, audio, video {
 }
 
 *{
+    font-family: var(--font-text);
     line-height: 1;
     box-sizing: border-box;
     user-select: none;

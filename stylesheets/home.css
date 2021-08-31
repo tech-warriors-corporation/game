@@ -12,6 +12,9 @@
     background-size: cover;
     opacity: 0;
     transition: opacity var(--transition-show-home);
+    flex-direction: column;
+    row-gap: calc(var(--space) * 2);
+    background-color: var(--black);
 }
 
 .home.home--show{
@@ -25,5 +28,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(var(--black-rgb), .56);
+    background-color: rgb(var(--black-rgb), .72);
+}
+
+.home .home__title, .home .home__button{
+    z-index: 1;
+}
+
+.home .home__title{
+    max-width: 800px;
+    text-align: center;
 }

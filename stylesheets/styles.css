@@ -16,7 +16,3 @@
     min-height: var(--height);
     max-height: var(--height);
 }
-
-.title{
-    font-family: var(--font-title);
-}
