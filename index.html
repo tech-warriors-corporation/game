@@ -4,16 +4,17 @@
         <title>Em busca da coroa</title>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Skranji:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="stylesheets/reset.css">
-        <link rel="stylesheet" href="stylesheets/variables.css">
-        <link rel="stylesheet" href="stylesheets/life.css">
-        <link rel="stylesheet" href="stylesheets/progress.css">
-        <link rel="stylesheet" href="stylesheets/counter.css">
-        <link rel="stylesheet" href="stylesheets/styles.css">
+        <link rel="stylesheet" href="./stylesheets/reset.css">
+        <link rel="stylesheet" href="./stylesheets/variables.css">
+        <link rel="stylesheet" href="./stylesheets/life.css">
+        <link rel="stylesheet" href="./stylesheets/progress.css">
+        <link rel="stylesheet" href="./stylesheets/counter.css">
+        <link rel="stylesheet" href="./stylesheets/home.css">
+        <link rel="stylesheet" href="./stylesheets/styles.css">
     </head>
     <body>
         <div class="game">
@@ -42,11 +43,16 @@
 
             <div data-counter class="counter" aria-label="Cronômetro"></div>
 
+            <div data-home class="home">
+                <h1 class="home__title" data-home-title></h1>
+                <button class="home__button" type="button" data-home-button></button>
+            </div>
         </div>
 
-        <script src="scripts/life.js"></script>
-        <script src="scripts/progress.js"></script>
-        <script src="scripts/counter.js"></script>
-        <script src="scripts/index.js"></script>
+        <script src="./scripts/life.js"></script>
+        <script src="./scripts/progress.js"></script>
+        <script src="./scripts/counter.js"></script>
+        <script src="./scripts/home.js"></script>
+        <script src="./scripts/index.js"></script>
     </body>
 </html>
