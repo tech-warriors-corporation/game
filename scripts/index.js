@@ -22,3 +22,7 @@ const config = {
 };
 
 config.init(true);
+
+try{
+    screen.orientation.lock("landscape-primary");
+} catch (e){}
