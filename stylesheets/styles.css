@@ -20,10 +20,17 @@
 
 @media screen and (orientation: portrait) {
     .game {
+        --portrait-width: 100vh;
+        --portrait-height: 100vw;
+
         transform: rotate(-90deg);
         transform-origin: left top;
-        width: 100vh;
-        height: 100vw;
+        width: var(--portrait-width);
+        min-width: var(--portrait-width);
+        max-width: var(--portrait-width);
+        height: var(--portrait-height);
+        min-height: var(--portrait-height);
+        max-height: var(--portrait-height);
         overflow-x: hidden;
         position: absolute;
         top: 100%;
