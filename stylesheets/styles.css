@@ -3,6 +3,7 @@
     font-family: var(--font-text);
     font-size: var(--space);
     color: var(--black);
+    overflow: hidden;
 }
 
 .game{
