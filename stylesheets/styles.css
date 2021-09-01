@@ -16,3 +16,16 @@
     min-height: var(--height);
     max-height: var(--height);
 }
+
+@media screen and (orientation: portrait) {
+    .game {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
