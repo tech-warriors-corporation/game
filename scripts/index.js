@@ -15,6 +15,7 @@ const config = {
     },
     lose: function(){
         this.lost = true;
+        home.show('Infelizmente você perdeu todas as vidas', 'Tentar novamente', './assets/home-arthur.png');
     },
     win: function(){
 

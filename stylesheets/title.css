@@ -1,9 +1,8 @@
 .title{
     text-shadow: 4px 4px var(--black);
-    text-decoration: underline;
     color: var(--white);
     font-family: var(--font-text);
-    font-size: 64px;
-    hyphens: auto;
+    font-size: 72px;
     text-transform: uppercase;
+    word-break: break-word;
 }
