@@ -4,7 +4,12 @@ const home = {
     title: document.querySelector('[data-home-title]'),
     activeClass: 'home--show',
     hideClass: 'home--none',
+    isActive: function(){
+        return this.element.classList.contains(this.activeClass);
+    },
     show: function(title, buttonName, imageUrl){
+        if(this.isActive()) return;
+
         this.element.classList.remove(this.hideClass);
         this.element.style.backgroundImage = `url(${imageUrl})`
         this.title.textContent = title;

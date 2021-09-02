@@ -5,13 +5,28 @@ const cutscene = {
     activeClass: 'cutscene--show',
     hideClass: 'cutscene--none',
     show: function(text, urls){
-        // urls.audio;
+        return new Promise((resolve, reject) => {
+            this.element.classList.remove(this.hideClass);
+            this.element.style.backgroundImage = `url(${urls.background})`;
+            this.text.textContent = text;
+            this.merlin.src = urls.merlin;
 
-        this.element.classList.remove(this.hideClass);
-        this.element.style.backgroundImage = `url(${urls.background})`;
-        this.text.textContent = text;
-        this.merlin.src = urls.merlin;
+            setTimeout(() => {
+                this.element.classList.add(this.activeClass);
 
-        setTimeout(() => this.element.classList.add(this.activeClass), config._timeTransitionWindow)
+                if(!home.isActive()){
+                    const audio = new Audio(urls.audio);
+
+                    audio.play();
+                    audio.onended = () => {
+                        resolve();
+
+                        this.element.classList.remove(this.activeClass);
+
+                        setTimeout(() => this.element.classList.add(this.hideClass), config._timeTransitionWindow)
+                    };
+                } else reject();
+            }, config._timeTransitionWindow);
+        });
     }
 };

@@ -6,6 +6,8 @@ Game for FriendBot.
 - [ ] Progress bar with legend;
 - [ ] Minify images, audios, css, and js, concatenate their and others;
 - [ ] Life bar;
+- [ ] Do loading cutscene;
+- [ ] Set audio in all game;
 - [ ] Timer seconds;
 - [ ] Character with sprite;
 - [ ] Button (and with animation);
