@@ -9,7 +9,7 @@
 .game{
     margin: 0 auto;
     background-color: var(--white);
-    position: revert;
+    position: relative;
     width: var(--width);
     min-width: var(--width);
     max-width: var(--width);
@@ -18,16 +18,29 @@
     max-height: var(--height);
 }
 
+.game.game--init::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    background-color: var(--black);
+}
+
+
 .window{
     width: 100%;
     height: 100%;
-    position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     opacity: 0;
     transition: opacity var(--transition-show-window);
     background-color: var(--black);
+    position: absolute;
+    top: 0;
 }
 
 .window::after{

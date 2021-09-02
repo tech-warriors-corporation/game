@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     row-gap: calc(var(--space) * 2);
+    z-index: 2;
 }
 
 .home.home--show{
@@ -19,7 +20,7 @@
 }
 
 .home .home__title, .home .home__button{
-    z-index: 1;
+    z-index: 3;
 }
 
 .home .home__title{

@@ -19,6 +19,14 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+img{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
 *{
     font-family: var(--font-text);
     line-height: 1;
