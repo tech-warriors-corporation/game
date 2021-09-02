@@ -20,4 +20,5 @@
     --time-transition: 1s;
     --speed-transition: .25s;
     --height-bars: 40px;
+    --transition-show-window: 250ms;
 }

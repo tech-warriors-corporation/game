@@ -17,3 +17,24 @@
     min-height: var(--height);
     max-height: var(--height);
 }
+
+.window{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity var(--transition-show-window);
+    background-color: var(--black);
+}
+
+.window::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

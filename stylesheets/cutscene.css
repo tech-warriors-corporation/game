@@ -1,0 +1,40 @@
+.cutscene{
+    padding: calc(var(--space) * 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cutscene.cutscene--show{
+    opacity: 1;
+}
+
+.cutscene.cutscene--none{
+    display: none;
+}
+
+.cutscene::after{
+    background-color: rgb(var(--black-rgb), .56);
+}
+
+.cutscene .cutscene__image, .cutscene .cutscene__text{
+    z-index: 1;
+}
+
+.cutscene .cutscene__text{
+    font-size: 24px;
+    color: var(--white);
+}
+
+.cutscene .cutscene__image{
+    width: 50%;
+}
+
+.cutscene .cutscene__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: calc(var(--space) * 2);
+    max-width: 800px;
+    margin: 0 auto;
+}

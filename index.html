@@ -3,7 +3,7 @@
     <head>
         <title>Em busca da coroa</title>
         <meta charset="utf-8">
-        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="./stylesheets/home.css">
         <link rel="stylesheet" href="./stylesheets/button.css">
         <link rel="stylesheet" href="./stylesheets/title.css">
+        <link rel="stylesheet" href="./stylesheets/cutscene.css">
         <link rel="stylesheet" href="./stylesheets/styles.css">
     </head>
     <body>
@@ -44,7 +45,14 @@
 
             <div data-counter class="counter" aria-label="Cronômetro"></div>
 
-            <div data-home class="home">
+            <div data-cutscene class="window cutscene cutscene--none">
+                <div class="cutscene__content">
+                    <p data-cutscene-text class="cutscene__text"></p>
+                    <img data-cutscene-merlin class="cutscene__image" src="" alt="Merlin">
+                </div>
+            </div>
+
+            <div data-home class="window home home--none">
                 <h1 class="title home__title" data-home-title></h1>
                 <button class="button home__button" type="button" data-home-button></button>
             </div>
@@ -54,6 +62,7 @@
         <script src="./scripts/progress.js"></script>
         <script src="./scripts/counter.js"></script>
         <script src="./scripts/home.js"></script>
+        <script src="./scripts/cutscene.js"></script>
         <script src="./scripts/index.js"></script>
     </body>
 </html>

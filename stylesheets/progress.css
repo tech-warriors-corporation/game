@@ -55,20 +55,20 @@
 
 .progress .progress__item.progress__item--bridge{
     background-size: calc(var(--progress-icon-size) + 10px);
-    background-image: url(../assets/icon-bridge.png);
+    background-image: url(../assets/images/icon-bridge.png);
 }
 
 .progress .progress__item.progress__item--sword{
-    background-image: url(../assets/icon-sword.png);
+    background-image: url(../assets/images/icon-sword.png);
 }
 
 .progress .progress__item.progress__item--chest{
-    background-image: url(../assets/icon-chest.png);
+    background-image: url(../assets/images/icon-chest.png);
 }
 
 .progress .progress__item.progress__item--castle{
     background-size: calc(var(--progress-icon-size) + 2px);
-    background-image: url(../assets/icon-castle.png);
+    background-image: url(../assets/images/icon-castle.png);
 }
 
 .progress .progress__title{
