@@ -18,5 +18,7 @@ const life = {
 
         if(lastItem) lastItem.classList.remove(this.activeItemClass);
         if(lastIndex === 0) config.lose();
+
+        audio.play('./assets/audios/hit-me.wav');
     }
 };
