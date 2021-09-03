@@ -10,6 +10,8 @@ const home = {
     show: function(title, buttonName, imageUrl){
         if(this.isActive()) return;
 
+        const audioHome = audio.play('./assets/audios/home.mp3');
+
         this.element.classList.remove(this.hideClass);
         this.element.style.backgroundImage = `url(${imageUrl})`
         this.title.textContent = title;
@@ -20,6 +22,7 @@ const home = {
         this.button.onclick = () => {
             config.init();
             this.element.classList.remove(this.activeClass);
+            audioHome.end();
 
             setTimeout(() => this.element.classList.add(this.hideClass), config._timeTransitionWindow)
         }

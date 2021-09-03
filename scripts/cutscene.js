@@ -15,10 +15,9 @@ const cutscene = {
                 this.element.classList.add(this.activeClass);
 
                 if(!home.isActive()){
-                    const audio = new Audio(urls.audio);
+                    const audioCutscene = audio.play(urls.audio);
 
-                    audio.play();
-                    audio.onended = () => {
+                    audioCutscene.onended = () => {
                         resolve();
 
                         this.element.classList.remove(this.activeClass);
