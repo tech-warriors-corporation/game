@@ -22,5 +22,6 @@
     --speed-transition: .25s;
     --height-bars: 40px;
     --transition-show-window: 250ms;
+    --transition-button: 100ms;
     --floor-height: 100px;
 }

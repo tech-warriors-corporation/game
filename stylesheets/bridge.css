@@ -1,5 +1,16 @@
-.brige{
+@keyframes scale-form {
+    0%{
+        transform: scale(.85);
+    }
 
+    100%{
+        transform: scale(1);
+    }
+}
+
+.brige{
+    width: 100%;
+    height: 100%;
 }
 
 .brige .brige__floor{
@@ -23,4 +34,47 @@
     background-image: none;
     border: var(--border-width) dashed var(--white);
     background-color: rgba(var(--white-rgb), .24);
+}
+
+.brige .brige__forms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.brige .brige__form{
+    --form-size: 150px;
+
+    margin: calc(var(--space) * 3);
+    width: var(--form-size);
+    height: var(--form-size);
+    z-index: 1;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    transition: transform var(--transition-button);
+    animation: var(--time-transition) scale-form infinite alternate;
+}
+
+.brige .brige__form:hover, .brige .brige__form:focus, .brige .brige__form:active{
+    transform: scale(1.15);
+    animation: none;
+}
+
+.brige .brige__form.brige__form--triangle{
+    background-image: url(../assets/images/bridge-triangle.png);
+}
+
+.brige .brige__form.brige__form--circle{
+    background-image: url(../assets/images/bridge-circle.png);
+}
+
+.brige .brige__form.brige__form--square{
+    background-image: url(../assets/images/bridge-square.png);
 }
