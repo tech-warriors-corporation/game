@@ -44,6 +44,10 @@
     height: 100%;
 }
 
+.brige .brige__forms.brige__forms--hide{
+    display: none;
+}
+
 .brige .brige__form{
     --form-size: 150px;
 

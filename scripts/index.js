@@ -32,7 +32,10 @@ const config = {
                             audio: './assets/audios/chest.mp3'
                         }
                     )
-                    .then(() => counter.init(30));
+                    .then(() => {
+                        bridge.init();
+                        counter.init(30);
+                    });
                 break;
         }
     },
