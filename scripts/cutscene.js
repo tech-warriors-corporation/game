@@ -15,15 +15,17 @@ const cutscene = {
                 this.element.classList.add(this.activeClass);
 
                 if(!home.isActive()){
-                    const audioCutscene = audio.play(urls.audio);
+                    audio.play(
+                        urls.audio,
+                        false,
+                        () => {
+                            resolve();
 
-                    audioCutscene.onended = () => {
-                        resolve();
+                            this.element.classList.remove(this.activeClass);
 
-                        this.element.classList.remove(this.activeClass);
-
-                        setTimeout(() => this.element.classList.add(this.hideClass), config._timeTransitionWindow)
-                    };
+                            setTimeout(() => this.element.classList.add(this.hideClass), config._timeTransitionWindow)
+                        }
+                    );
                 } else reject();
             }, config._timeTransitionWindow);
         });

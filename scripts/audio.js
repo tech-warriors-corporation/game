@@ -1,14 +1,18 @@
 const audio = {
-    play: function(url){
+    play: function(url, repeat, onEnded){
         const audioPlayed = new Audio(url);
 
         audioPlayed.volume = 0.25;
         audioPlayed.play();
 
+        audioPlayed.onended = () => {
+            if(onEnded) onEnded();
+            if(repeat) audioPlayed.play();
+        };
+
         return {
             yourself: audioPlayed,
-            end: () => audioPlayed.pause(),
-            onended: audioPlayed.onended
+            end: () => audioPlayed.pause()
         }
     }
 }

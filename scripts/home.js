@@ -10,7 +10,7 @@ const home = {
     show: function(title, buttonName, imageUrl){
         if(this.isActive()) return;
 
-        const audioHome = audio.play('./assets/audios/home.mp3');
+        const audioHome = audio.play('./assets/audios/home.mp3', true);
 
         this.element.classList.remove(this.hideClass);
         this.element.style.backgroundImage = `url(${imageUrl})`
