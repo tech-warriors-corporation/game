@@ -5,3 +5,22 @@
 .brige .brige__floor{
     background-image: url(../assets/images/bridge-grass.jpeg);
 }
+
+.brige .brige__floor.brige__floor--right{
+    width: 30%;
+    right: 0;
+}
+
+.brige .brige__floor.brige__floor--left{
+    width: 15%;
+    left: 0;
+}
+
+.brige .brige__floor.brige__floor--complete{
+    left: 15%;
+    width: 55%;
+    padding: var(--space);
+    background-image: none;
+    border: var(--border-width) dashed var(--white);
+    background-color: rgba(var(--white-rgb), .24);
+}
