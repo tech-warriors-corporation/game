@@ -16,6 +16,9 @@
     height: var(--height);
     min-height: var(--height);
     max-height: var(--height);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .game.game--init::after{
