@@ -8,6 +8,7 @@ Game for FriendBot.
 - [ ] Life bar;
 - [ ] Do loading cutscene;
 - [ ] Set audio in all game;
+- [ ] Delete unused files;
 - [ ] Timer seconds;
 - [ ] Character with sprite;
 - [ ] Button (and with animation);

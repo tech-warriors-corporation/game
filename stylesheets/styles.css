@@ -32,6 +32,12 @@
     background-color: var(--black);
 }
 
+.floor{
+    width: 100%;
+    height: var(--floor-height);
+    position: absolute;
+    bottom: 0;
+}
 
 .window{
     width: 100%;

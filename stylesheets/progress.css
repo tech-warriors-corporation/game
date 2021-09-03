@@ -82,3 +82,7 @@
     word-break: break-word;
     text-align: center;
 }
+
+.progress .progress__title.progress__title--light{
+    color: var(--white);
+}

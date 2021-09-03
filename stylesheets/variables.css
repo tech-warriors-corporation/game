@@ -5,6 +5,7 @@
     --black: #000;
     --black-rgb: 0, 0, 0;
     --white: #fff;
+    --white-rgb: 255, 255, 255;
     --blue: #304ffe;
     --red: #d50000;
     --red-rgb: 213, 0, 0;
@@ -21,4 +22,5 @@
     --speed-transition: .25s;
     --height-bars: 40px;
     --transition-show-window: 250ms;
+    --floor-height: 100px;
 }

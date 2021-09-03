@@ -1,6 +1,7 @@
 .life{
     --life-bar-items: 5;
     --life-bar-width: calc(var(--height-bars) * var(--life-bar-items));
+    --life-shadow-color: rgba(var(--white-rgb), .56);
 
     display: flex;
     flex-direction: column;
@@ -29,4 +30,12 @@
 
 .life .life__item.life__item--active{
     background-color: var(--red);
+}
+
+.life .life__label{
+    text-shadow: 0 0 8px var(--life-shadow-color);
+}
+
+.life .life__bar{
+    box-shadow: 0 0 4px 0 var(--life-shadow-color);
 }

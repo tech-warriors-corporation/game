@@ -1,3 +1,7 @@
 .brige{
 
 }
+
+.brige .brige__floor{
+    background-image: url(../assets/images/bridge-grass.jpeg);
+}

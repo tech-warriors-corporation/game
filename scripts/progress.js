@@ -3,9 +3,13 @@ const progress = {
     items: document.querySelectorAll('[data-progress-item]'),
     bar: document.querySelector('[data-progress-bar]'),
     title: document.querySelector('[data-progress-title]'),
+    lightTitleClass: 'progress__title--light',
     activeItemClass: 'progress__item--active',
-    setTitle: function(title){
+    setTitle: function(title, light){
         this.title.textContent = title;
+
+        if(light) this.title.classList.add(this.lightTitleClass);
+        else this.title.classList.remove(this.lightTitleClass);
     },
     currentBarWidth: function(reset){
         if(reset) return '0px';
