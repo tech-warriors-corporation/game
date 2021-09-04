@@ -3,6 +3,7 @@ const bridge = {
     complete: document.querySelector('[data-bridge-complete]'),
     buttons: document.querySelectorAll('[data-bridge-form]'),
     forms: document.querySelector('[data-bridge-forms]'),
+    bridgeRight: document.querySelector('[data-bridge-right]'),
     hideFormsClass: 'brige__forms--hide',
     showBridgeClass: 'brige__floor--way',
     _correctValue: 'square',
@@ -37,10 +38,11 @@ const bridge = {
             this.endAssets();
             this.correctAudio = audio.play('./assets/audios/correct.mp3');
 
-            arthur.walk(28).then(() => {
-                this.endAudios();
-                this.conclude();
-            });
+            arthur.walk(this.bridgeRight.offsetLeft)
+                  .then(() => {
+                       this.endAudios();
+                       this.conclude();
+                   });
 
             return;
         }

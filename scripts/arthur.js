@@ -1,9 +1,9 @@
 const arthur = {
     element: document.querySelector('[data-arthur]'),
-    positionX: -150,
-    positionY: -161.6,
+    defaultPositionX: -150,
+    defaultPositionY: -161.6,
     runX: 50,
-    _defaultLeft: 100,
+    _defaultLeft: 0,
     setLeft: function(value){
         this.element.style.left = `${value}px`;
     },
@@ -13,13 +13,15 @@ const arthur = {
     setBackgroundPositionY: function(value){
         this.element.style.backgroundPositionY = `${value}px`;
     },
-    walk: function(times){
+    walk: function(size){
         return new Promise(resolve => {
+            const times = Math.round(size / this.runX);
+
+            this.setBackgroundPositionY(this.defaultPositionY * 11);
+
             if(!times) resolve();
 
             let counter = 0;
-
-            this.setBackgroundPositionY(this.positionY * 11);
 
             const interval = setInterval(() => {
                 if(counter === times){
@@ -32,7 +34,7 @@ const arthur = {
                                                 utils.pxToNumber(this.element.style.backgroundPositionX);
 
                     this.setLeft(left + this.runX);
-                    this.setBackgroundPositionX(backgroundPositionX + this.positionX);
+                    this.setBackgroundPositionX(backgroundPositionX + this.defaultPositionX);
                 }
 
                 counter++

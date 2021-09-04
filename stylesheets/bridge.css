@@ -24,22 +24,24 @@
 }
 
 .brige .brige__floor{
+    --width-floor: 200px;
     background-image: url(../assets/images/bridge-grass.jpeg);
 }
 
 .brige .brige__floor.brige__floor--right{
-    width: 30%;
+    width: var(--width-floor);
     right: 0;
 }
 
 .brige .brige__floor.brige__floor--left{
-    width: 15%;
+    width: var(--width-floor);
     left: 0;
 }
 
 .brige .brige__floor.brige__floor--complete{
-    left: 15%;
-    width: 55%;
+    left: var(--width-floor);
+    right: var(--width-floor);
+    width: auto;
     padding: var(--space);
     background-image: none;
     border: var(--border-width) dashed var(--white);
