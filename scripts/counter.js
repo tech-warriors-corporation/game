@@ -18,6 +18,7 @@ const counter = {
         if(config.lost) return;
         if(this.interval) clearInterval(this.interval);
 
+        this.element.classList.remove(this.alertClass);
         this._stop = false;
         this._seconds = seconds;
         this.seconds = seconds;

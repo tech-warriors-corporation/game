@@ -21,6 +21,9 @@ const bridge = {
         this.forms.classList.remove(this.hideFormsClass);
         this.complete.classList.remove(this.showBridgeClass);
         this.buttons.forEach(button => button.onclick = this.select.bind(this));
+
+        arthur.init();
+        arthur.walk(28);
     },
     select: function(event){
         if(this._wellDone) return;
