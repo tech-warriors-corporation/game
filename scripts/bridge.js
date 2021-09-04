@@ -8,22 +8,23 @@ const bridge = {
     _correctValue: 'square',
     _wellDone: false,
     audio: null,
-    endAssets: function(stopAudio){
+    endAudio: function (){
+        this.audio.end();
+    },
+    endAssets: function(){
         this.forms.classList.add(this.hideFormsClass);
         counter.stop();
 
-        if(config.lost || stopAudio) this.audio.end();
+        if(config.lost) this.endAudio();
     },
     conclude: () => {},
     init: function(){
         this.audio = audio.play('./assets/audios/bridge.mp3', true);
+        arthur.init();
         this._wellDone = false;
         this.forms.classList.remove(this.hideFormsClass);
         this.complete.classList.remove(this.showBridgeClass);
         this.buttons.forEach(button => button.onclick = this.select.bind(this));
-
-        arthur.init();
-        arthur.walk(28);
     },
     select: function(event){
         if(this._wellDone) return;
@@ -31,9 +32,12 @@ const bridge = {
         if(event.target.dataset.bridgeForm === this._correctValue){
             this._wellDone = true;
             this.complete.classList.add(this.showBridgeClass);
+            this.endAssets();
 
-            this.endAssets(true); // after character moves
-            this.conclude(); // after character moves
+            arthur.walk(28).then(() => {
+                this.endAudio();
+                this.conclude();
+            });
 
             return;
         }

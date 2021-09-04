@@ -54,7 +54,9 @@
     border: 0;
     animation: none;
     background-color: transparent;
-    background-image: url(../assets/images/bridge-rectangle.png);
+    background-image: url(../assets/images/bridge-square.png);
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 .brige .brige__forms{

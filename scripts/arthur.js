@@ -36,10 +36,11 @@ const arthur = {
                 }
 
                 counter++
-            }, 500);
+            }, 250);
         })
     },
     init: function(){
         this.setLeft(this._defaultLeft);
+        this.walk(0);
     }
 };
