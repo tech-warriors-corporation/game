@@ -95,8 +95,13 @@
     animation: var(--time-transition) scale-form infinite alternate;
 }
 
-.brige .brige__form:hover, .brige .brige__form:active{
-    transform: scale(1.15);
+.brige .brige__form:hover{
+    transform: scale(1.05);
+    animation: none;
+}
+
+.brige .brige__form:active{
+    transform: scale(.8);
     animation: none;
 }
 

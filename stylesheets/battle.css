@@ -1,0 +1,15 @@
+.battle{
+    width: 100%;
+    height: 100%;
+}
+
+.battle.battle--hide{
+    display: none;
+}
+
+.battle .battle__floor{
+    --floor-battle-color: #8ba949;
+
+    left: 0;
+    background-color: var(--floor-battle-color);
+}

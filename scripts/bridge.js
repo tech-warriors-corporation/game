@@ -19,6 +19,7 @@ const bridge = {
         if(this.correctAudio) this.correctAudio.end();
     },
     endAssets: function(){
+        this.complete.classList.add(this.showBridgeClass);
         this.forms.classList.add(this.hideFormsClass);
         counter.stop();
 
@@ -39,7 +40,6 @@ const bridge = {
 
         if(event.target.dataset.bridgeForm === this._correctValue){
             this._wellDone = true;
-            this.complete.classList.add(this.showBridgeClass);
             this.endAssets();
             this.correctAudio = audio.play('./assets/audios/correct.mp3');
 

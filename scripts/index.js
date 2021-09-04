@@ -69,6 +69,7 @@ const config = {
                         this.changeBackgroundImage('./assets/images/battle.png');
 
                         counter.init(20);
+                        battle.init();
                     });
                 break;
         }
@@ -76,6 +77,7 @@ const config = {
     lose: function(){
         this.lost = true;
         bridge.endAssets();
+        battle.endAssets();
         home.show(
             'Infelizmente você perdeu todas as vidas',
             'Tentar novamente',
