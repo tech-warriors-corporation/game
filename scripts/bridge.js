@@ -4,12 +4,16 @@ const bridge = {
     buttons: document.querySelectorAll('[data-bridge-form]'),
     forms: document.querySelector('[data-bridge-forms]'),
     bridgeRight: document.querySelector('[data-bridge-right]'),
+    hideClass: 'brige--hide',
     hideFormsClass: 'brige__forms--hide',
     showBridgeClass: 'brige__floor--way',
     _correctValue: 'square',
     _wellDone: false,
     audio: null,
     correctAudio: null,
+    hide: function(){
+        this.element.classList.add(this.hideClass);
+    },
     endAudios: function (){
         if(this.audio) this.audio.end();
         if(this.correctAudio) this.correctAudio.end();
@@ -22,6 +26,7 @@ const bridge = {
     },
     conclude: () => {},
     init: function(){
+        this.element.classList.remove(this.hideClass);
         this.audio = audio.play('./assets/audios/bridge.mp3', { repeat: true });
         arthur.init();
         this._wellDone = false;

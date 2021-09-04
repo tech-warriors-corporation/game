@@ -23,6 +23,10 @@
     height: 100%;
 }
 
+.brige.brige--hide{
+    display: none;
+}
+
 .brige .brige__floor{
     --width-floor: 200px;
     background-image: url(../assets/images/bridge-grass.jpeg);
