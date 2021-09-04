@@ -1,14 +1,17 @@
 @keyframes shadow-attack {
     0%{
         box-shadow: var(--shadow-battle-attack-small);
+        transform: scale(.95);
     }
 
     50%{
         box-shadow: var(--shadow-battle-attack-medium);
+        transform: scale(1);
     }
 
     100%{
         box-shadow: var(--shadow-battle-attack-large);
+        transform: scale(1.05);
     }
 }
 
@@ -56,7 +59,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--white);
-    transition: box-shadow var(--speed-transition), opacity var(--speed-transition);
+    transition: box-shadow var(--speed-transition), opacity var(--speed-transition), transform var(--speed-transition);
     box-shadow: var(--shadow-battle-attack-small);
     animation: shadow-attack alternate infinite var(--time-transition);
 }
@@ -65,12 +68,14 @@
     box-shadow: var(--shadow-battle-attack-medium);
     opacity: .95;
     animation: none;
+    transform: scale(1);
 }
 
 .battle .battle__attack:active{
     box-shadow: var(--shadow-battle-attack-large);
     opacity: .9;
     animation: none;
+    transform: scale(1.05);
 }
 
 .battle .battle__attack.battle__attack--sword{

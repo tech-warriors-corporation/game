@@ -1,9 +1,8 @@
 const arthur = {
     element: document.querySelector('[data-arthur]'),
-    defaultPositionX: -150,
-    defaultPositionY: -161.6,
     runX: 50,
     _defaultLeft: 0,
+    _moveTime: 200,
     setLeft: function(value){
         this.element.style.left = `${value}px`;
     },
@@ -17,7 +16,7 @@ const arthur = {
         return new Promise(resolve => {
             const times = Math.round(size / this.runX);
 
-            this.setBackgroundPositionY(this.defaultPositionY * 11);
+            this.setBackgroundPositionY(-161.5 * 11);
 
             if(!times) resolve();
 
@@ -29,17 +28,54 @@ const arthur = {
                     clearInterval(interval);
                     resolve();
                 } else{
-                    const left = utils.pxToNumber(getComputedStyle(this.element).left) || utils.pxToNumber(this.element.style.left);
-                    const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX) ||
-                                                utils.pxToNumber(this.element.style.backgroundPositionX);
+                    const left = utils.pxToNumber(getComputedStyle(this.element).left, true) || utils.pxToNumber(this.element.style.left, true);
+                    const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX, true) ||
+                                                utils.pxToNumber(this.element.style.backgroundPositionX, true);
 
                     this.setLeft(left + this.runX);
-                    this.setBackgroundPositionX(backgroundPositionX + this.defaultPositionX);
+                    this.setBackgroundPositionX(backgroundPositionX - 150);
                 }
 
                 counter++
-            }, 250);
+            }, this._moveTime);
         })
+    },
+    attack: function(type){
+        let times = 0;
+        let row = null;
+        let counter = 0;
+        const adjustX = -15;
+
+        switch(type){
+            case "sword":
+                times = 5;
+                row = 15;
+                break;
+            case "spear":
+                times = 7;
+                row = 7;
+                break;
+        }
+
+        this.setBackgroundPositionY(-161.5 * row);
+        this.setBackgroundPositionX(adjustX);
+
+        return new Promise(resolve => {
+            const interval = setInterval(() => {
+                if(counter === times){
+                    this.setBackgroundPositionX(adjustX);
+                    clearInterval(interval);
+                    resolve();
+                } else{
+                    const backgroundPositionX = utils.pxToNumber(this.element.style.backgroundPositionX) ||
+                                                utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX);
+
+                    this.setBackgroundPositionX(backgroundPositionX - 161.25);
+                }
+
+                counter++
+            }, this._moveTime);
+        });
     },
     init: function(){
         this.setLeft(this._defaultLeft);

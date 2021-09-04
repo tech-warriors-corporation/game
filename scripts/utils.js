@@ -1,3 +1,3 @@
 const utils = {
-    pxToNumber: property => Number(property.replace(/\D/g, '')) || 0
+    pxToNumber: (property, noNegative) => Number(property.replace(noNegative ? /\D/g : 'px', '')) || 0
 }
