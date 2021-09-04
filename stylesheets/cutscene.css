@@ -17,13 +17,23 @@
     background-color: rgb(var(--black-rgb), .56);
 }
 
-.cutscene .cutscene__image, .cutscene .cutscene__text{
+.cutscene .cutscene__image, .cutscene .cutscene__text, .cutscene .cutscene__loading, .cutscene .cutscene__title, .cutscene .cutscene__texts{
     z-index: 1;
 }
 
 .cutscene .cutscene__text{
     font-size: 24px;
     color: var(--white);
+}
+
+.cutscene .cutscene__loading{
+    color: var(--blue);
+    font-size: 36px;
+}
+
+.cutscene .cutscene__title{
+    color: var(--yellow);
+    font-size: 28px;
 }
 
 .cutscene .cutscene__image{
@@ -34,7 +44,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: calc(var(--space) * 2);
-    max-width: 800px;
+    column-gap: var(--space);
+    max-width: 700px;
     margin: 0 auto;
+}
+
+.cutscene .cutscene__texts{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--half-space);
 }

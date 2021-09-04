@@ -8,18 +8,20 @@ const bridge = {
     _correctValue: 'square',
     _wellDone: false,
     audio: null,
-    endAudio: function (){
-        this.audio.end();
+    correctAudio: null,
+    endAudios: function (){
+        if(this.audio) this.audio.end();
+        if(this.correctAudio) this.correctAudio.end();
     },
     endAssets: function(){
         this.forms.classList.add(this.hideFormsClass);
         counter.stop();
 
-        if(config.lost) this.endAudio();
+        if(config.lost) this.endAudios();
     },
     conclude: () => {},
     init: function(){
-        this.audio = audio.play('./assets/audios/bridge.mp3', true);
+        this.audio = audio.play('./assets/audios/bridge.mp3', { repeat: true });
         arthur.init();
         this._wellDone = false;
         this.forms.classList.remove(this.hideFormsClass);
@@ -33,9 +35,10 @@ const bridge = {
             this._wellDone = true;
             this.complete.classList.add(this.showBridgeClass);
             this.endAssets();
+            this.correctAudio = audio.play('./assets/audios/correct.mp3');
 
             arthur.walk(28).then(() => {
-                this.endAudio();
+                this.endAudios();
                 this.conclude();
             });
 

@@ -10,7 +10,7 @@
     color: var(--black);
 }
 
-.button:hover, .button:focus{
+.button:hover{
     opacity: .95;
     box-shadow: 0 0 8px 0 var(--yellow);
 }
@@ -20,6 +20,6 @@
     box-shadow: 0 0 12px 0 var(--yellow);
 }
 
-.button:hover, .button:focus, .button:active{
+.button:hover, .button:active{
     font-size: 54px;
 }

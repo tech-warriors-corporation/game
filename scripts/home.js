@@ -7,13 +7,14 @@ const home = {
     isActive: function(){
         return this.element.classList.contains(this.activeClass);
     },
-    show: function(title, buttonName, imageUrl){
+    show: function(title, buttonName, assets){
         if(this.isActive()) return;
 
-        const audioHome = audio.play('./assets/audios/home.mp3', true);
+        const musicHome = audio.play(assets.musicUrl, { repeat: true });
+        const audioHome = audio.play(assets.audioUrl, { repeat: false, volume: 1 });
 
         this.element.classList.remove(this.hideClass);
-        this.element.style.backgroundImage = `url(${imageUrl})`
+        this.element.style.backgroundImage = `url(${assets.imageUrl})`
         this.title.textContent = title;
         this.button.textContent = buttonName;
 
@@ -22,6 +23,7 @@ const home = {
         this.button.onclick = () => {
             config.init();
             this.element.classList.remove(this.activeClass);
+            musicHome.end();
             audioHome.end();
 
             setTimeout(() => this.element.classList.add(this.hideClass), config._timeTransitionWindow)

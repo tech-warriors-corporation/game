@@ -21,15 +21,26 @@ const config = {
                 life.reset();
                 progress.reset();
                 progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
-                home.show('Em busca da coroa', 'Jogar', './assets/images/home-arthur-and-merlin.png');
+
+                home.show(
+                    'Em busca da coroa',
+                    'Jogar',
+                    {
+                        imageUrl: './assets/images/home-arthur-and-merlin.png',
+                        musicUrl: './assets/audios/home.mp3',
+                        audioUrl: './assets/audios/help-home.mp3',
+                    }
+                );
+
                 this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
                 cutscene
                     .show(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                        'Primeiro desafio',
+                        'Ajude o Rei Arthur a atravessar a ponte completando com a forma geométrica correta.',
                         {
                             background: './assets/images/cutscene-bridge.jpg',
                             merlin: './assets/images/cutscene-merlin-one.png',
-                            audio: './assets/audios/chest.mp3'
+                            audio: './assets/audios/cutscene-one.mp3'
                         }
                     )
                     .then(() => {
@@ -43,7 +54,15 @@ const config = {
     lose: function(){
         this.lost = true;
         bridge.endAssets();
-        home.show('Infelizmente você perdeu todas as vidas', 'Tentar novamente', './assets/images/home-arthur.png');
+        home.show(
+            'Infelizmente você perdeu todas as vidas',
+            'Tentar novamente',
+            {
+                imageUrl: './assets/images/home-arthur.png',
+                musicUrl: './assets/audios/lose.mp3',
+                audioUrl: './assets/audios/help-lose.mp3',
+            }
+        );
     },
     win: function(){
 
