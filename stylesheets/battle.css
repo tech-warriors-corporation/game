@@ -1,3 +1,17 @@
+@keyframes shadow-attack {
+    0%{
+        box-shadow: var(--shadow-battle-attack-small);
+    }
+
+    50%{
+        box-shadow: var(--shadow-battle-attack-medium);
+    }
+
+    100%{
+        box-shadow: var(--shadow-battle-attack-large);
+    }
+}
+
 .battle{
     width: 100%;
     height: 100%;
@@ -12,4 +26,57 @@
 
     left: 0;
     background-color: var(--floor-battle-color);
+}
+
+.battle .battle__atacks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    column-gap: calc(var(--space) * 6);
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.battle .battle__attack{
+    --battle-attack-size: 150px;
+    --shadow-battle-attack-small: 0 0 8px 0 var(--light-grey);
+    --shadow-battle-attack-medium: 0 0 16px 2px var(--light-grey);
+    --shadow-battle-attack-large: 0 0 24px 4px var(--light-grey);
+
+    width: var(--battle-attack-size);
+    height: var(--battle-attack-size);
+    border-radius: 50%;
+    border: var(--border);
+    border-color: var(--light-grey);
+    padding: 0;
+    cursor: pointer;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--white);
+    transition: box-shadow var(--speed-transition), opacity var(--speed-transition);
+    box-shadow: var(--shadow-battle-attack-small);
+    animation: shadow-attack alternate infinite var(--time-transition);
+}
+
+.battle .battle__attack:hover{
+    box-shadow: var(--shadow-battle-attack-medium);
+    opacity: .95;
+    animation: none;
+}
+
+.battle .battle__attack:active{
+    box-shadow: var(--shadow-battle-attack-large);
+    opacity: .9;
+    animation: none;
+}
+
+.battle .battle__attack.battle__attack--sword{
+    background-image: url(../assets/images/battle-sword.png);
+}
+
+.battle .battle__attack.battle__attack--spear{
+    background-image: url(../assets/images/battle-spear.png);
 }
