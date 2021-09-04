@@ -8,6 +8,16 @@
     }
 }
 
+@keyframes blink-background{
+    0%{
+        background-color: rgba(var(--white-rgb), .12);
+    }
+
+    100%{
+        background-color: rgba(var(--white-rgb), .24);
+    }
+}
+
 .brige{
     width: 100%;
     height: 100%;
@@ -33,7 +43,18 @@
     padding: var(--space);
     background-image: none;
     border: var(--border-width) dashed var(--white);
-    background-color: rgba(var(--white-rgb), .24);
+    animation: blink-background alternate infinite var(--time-transition);
+}
+
+.brige .brige__floor.brige__floor--way{
+    --height-floor-way: calc(var(--floor-height) / 2);
+
+    height: var(--height-floor-way);
+    bottom: var(--height-floor-way);
+    border: 0;
+    animation: none;
+    background-color: transparent;
+    background-image: url(../assets/images/bridge-rectangle.png);
 }
 
 .brige .brige__forms{

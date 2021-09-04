@@ -8,6 +8,9 @@ const counter = {
     setSecondsText: function(seconds){
         this.element.textContent = `${seconds}s`;
     },
+    stop: function(){
+        this._stop = true;
+    },
     toggle: function(){
         this._stop = !this._stop;
     },
@@ -15,6 +18,7 @@ const counter = {
         if(config.lost) return;
         if(this.interval) clearInterval(this.interval);
 
+        this._stop = false;
         this._seconds = seconds;
         this.seconds = seconds;
 
