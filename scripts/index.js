@@ -7,13 +7,12 @@ const config = {
     },
     init: function(){
         this.element.classList.add(this.hideClass);
-
-        this.step = 1;
         this.lost = false;
-
-        config.next();
+        config.next(1);
     },
-    next: function(){
+    next: function(nextStep){
+        this.step = nextStep;
+
         setTimeout(() => this.element.classList.remove(this.hideClass), this._timeTransitionWindow * 2);
 
         switch(this.step){
@@ -33,6 +32,7 @@ const config = {
                 );
 
                 this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
+
                 cutscene
                     .show(
                         'Primeiro desafio',
@@ -46,7 +46,11 @@ const config = {
                     .then(() => {
                         counter.init(30);
                         bridge.init();
-                        bridge.conclude = () => {};
+
+                        bridge.conclude = () => {
+                            debugger;
+                            this.next(2);
+                        };
                     });
                 break;
         }
