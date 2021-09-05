@@ -28,11 +28,9 @@ const cutscene = {
             setTimeout(() => {
                 this.element.classList.add(this.activeClass);
 
-                // TODO RETIRAR ROOLBACK AQUI NESSE FILE
-
                 if(!home.isActive()){
                     audio.play(
-                        './assets/audios/be-afraid.mp3',
+                        urls.audio,
                         { repeat: false, volume: 1 },
                         () => {
                             clearInterval(loadingInterval);
