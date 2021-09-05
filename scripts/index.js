@@ -18,7 +18,7 @@ const config = {
 
         switch(this.step){
             case 1:
-                if(showHome)
+                if(showHome){
                     home.show(
                         'Em busca da coroa',
                         'Jogar',
@@ -28,6 +28,7 @@ const config = {
                             audioUrl: './assets/audios/help-home.mp3',
                         }
                     );
+                }
 
                 cutscene
                     .show(
@@ -42,9 +43,7 @@ const config = {
                     .then(() => {
                         life.reset();
                         progress.reset();
-
                         this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
-
                         progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
                         counter.init();
                         bridge.init();
@@ -66,11 +65,29 @@ const config = {
                         bridge.hide();
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
-
                         this.changeBackgroundImage('./assets/images/battle.png');
-
                         counter.init(battle.userHitted.bind(battle));
                         battle.init();
+                        battle.conclude = () => this.next(3);
+                    });
+                break;
+            case 3:
+                cutscene
+                    .show(
+                        'Terceiro desafio',
+                        'Ajude o Rei Arthur a achar a chave do castelo no meio dos objetos.',
+                        {
+                            background: './assets/images/cutscene-chest.jpg',
+                            merlin: './assets/images/cutscene-merlin-three.png',
+                            audio: './assets/audios/cutscene-three.mp3'
+                        }
+                    )
+                    .then(() => {
+                        battle.hide();
+                        progress.next();
+                        progress.setTitle('Ajude o rei Arthur encontrar a chave do castelo', true);
+                        this.changeBackgroundImage('./assets/images/chest-grass.jpeg');
+                        counter.init();
                     });
                 break;
         }

@@ -29,6 +29,8 @@
 
 .brige .brige__floor{
     --width-floor: 200px;
+    --height-floor-way: calc(var(--floor-height) / 2);
+
     background-image: url(../assets/images/bridge-grass.jpeg);
 }
 
@@ -46,6 +48,8 @@
     left: var(--width-floor);
     right: var(--width-floor);
     width: auto;
+    height: var(--height-floor-way);
+    bottom: var(--height-floor-way);
     padding: var(--space);
     background-image: none;
     border: var(--border-width) dashed var(--white);
@@ -53,8 +57,6 @@
 }
 
 .brige .brige__floor.brige__floor--way{
-    --height-floor-way: calc(var(--floor-height) / 2);
-
     height: var(--height-floor-way);
     bottom: var(--height-floor-way);
     border: 0;

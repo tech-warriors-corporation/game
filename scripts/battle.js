@@ -5,6 +5,7 @@ const battle = {
     hideContainerButtonsClass: 'battle__atacks--hide',
     hideClass: 'battle--hide',
     audio: null,
+    conclude: () => {},
     showAttacks: function(){
         this.containerButtons.classList.remove(this.hideContainerButtonsClass);
     },
@@ -44,7 +45,10 @@ const battle = {
                     arthur.walk(-positionEnemy).then(() => {
                         arthur.init();
 
-                        if(killedHim) this.killedHim();
+                        if(killedHim){
+                            battle.endAssets();
+                            this.conclude();
+                        }
                         else{
                             this.showAttacks();
                             counter.continue();
@@ -74,8 +78,5 @@ const battle = {
 
             arthur.hitMe();
         });
-    },
-    killedHim: function(){
-
     }
 };
