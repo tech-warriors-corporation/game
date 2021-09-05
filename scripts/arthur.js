@@ -1,6 +1,7 @@
 const arthur = {
     element: document.querySelector('[data-arthur]'),
     runX: 50,
+    _defaultY: -161.35,
     _defaultLeft: 0,
     _moveTime: 200,
     setLeft: function(value){
@@ -16,7 +17,7 @@ const arthur = {
         return new Promise(resolve => {
             const times = Math.round(size / this.runX);
 
-            this.setBackgroundPositionY(-161.5 * 11);
+            this.setBackgroundPositionY(this._defaultY * 11);
 
             if(!times) resolve();
 
@@ -57,7 +58,7 @@ const arthur = {
                 break;
         }
 
-        this.setBackgroundPositionY(-161.5 * row);
+        this.setBackgroundPositionY(this._defaultY * row);
         this.setBackgroundPositionX(adjustX);
 
         return new Promise(resolve => {
