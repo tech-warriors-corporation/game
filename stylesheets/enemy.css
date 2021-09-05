@@ -26,5 +26,5 @@
 }
 
 .enemy.enemy--0::after{
-    background: linear-gradient(to right, var(--red) 0%, var(--light-grey) 100%);
+    background-color: var(--light-grey);
 }

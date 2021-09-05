@@ -17,6 +17,9 @@ const counter = {
     toggle: function(){
         this._stop = !this._stop;
     },
+    restart: function(){
+        this.init(this._seconds);
+    },
     init: function(seconds){
         if(config.lost) return;
         if(this.interval) clearInterval(this.interval);

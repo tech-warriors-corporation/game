@@ -3,11 +3,18 @@ const enemy = {
     runX: 50,
     classes: ['enemy--100', 'enemy--50', 'enemy--0'],
     _life: 100,
-    _defaultY: -95,
+    _defaultY: -151,
     _defaultLife: 100,
     _defaultRight: 0,
     _moveTime: 200,
     _adjustX: 6,
+    getPositionLeft: function(){
+        return this.element.offsetLeft - (config.widthSprites / 2);
+    },
+    getBackgroundPositionX: function(){
+        return utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX) ||
+               utils.pxToNumber(this.element.style.backgroundPositionX);
+    },
     setLife: function(life){
         this._life = life;
 
@@ -27,8 +34,9 @@ const enemy = {
         return new Promise(resolve => {
             const times = Math.round(size / this.runX);
             const isBack = times < 0;
+            const leftover = -105;
 
-            this.setBackgroundPositionY(isBack ? this._defaultY * 11 : this._defaultY * 9);
+            this.setBackgroundPositionY((isBack ? this._defaultY * 11 : this._defaultY * 9) + leftover);
             this.setBackgroundPositionX(this._adjustX);
 
             if(!times){
@@ -61,14 +69,59 @@ const enemy = {
         return new Promise(resolve => {})
     },
     died: function (){
-        return new Promise(resolve => {})
+        return new Promise(resolve => {
+            audio.play('./assets/audios/correct.mp3');
+
+            const leftover = 30;
+            const times = 5;
+            let counter = 0;
+
+            this.setBackgroundPositionX(this._adjustX);
+            this.setBackgroundPositionY((this._defaultY * 21) + leftover);
+
+            const interval = setInterval(() => {
+                if(counter === times){
+                    clearInterval(interval);
+                    resolve();
+
+                    return;
+                }
+
+                this.setBackgroundPositionX(this.getBackgroundPositionX() - 152);
+
+                counter++;
+            }, this._moveTime);
+        })
     },
     hitMe: function(){
+        const times = 6;
+        const leftover = -95;
+        let counter = 0;
+
         this.setLife(this._life - 50);
+        this.setBackgroundPositionY(this._defaultY + leftover);
+        this.setBackgroundPositionX(this._adjustX);
 
         audio.play('./assets/audios/hit-him.wav');
 
-        if(this._life === 0) this.died().then(() => battle.killHim());
+        return new Promise(resolve => {
+            const interval = setInterval(() => {
+                if(counter === times){
+                    this.setBackgroundPositionX(this._adjustX);
+
+                    const killedHim = this._life === 0;
+
+                    clearInterval(interval);
+                    resolve(killedHim);
+
+                    return;
+                }
+
+                this.setBackgroundPositionX(this.getBackgroundPositionX() - 152);
+
+                counter++;
+            }, this._moveTime);
+        })
     },
     init: function(){
         this.setLife(this._defaultLife);

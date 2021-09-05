@@ -4,8 +4,8 @@ const arthur = {
     _defaultY: -161.35,
     _defaultLeft: 0,
     _moveTime: 200,
-    getPosition: function(){
-        return arthur.element.offsetLeft + config.widthSprites;
+    getPositionRight: function(){
+        return this.element.offsetLeft + (config.widthSprites * 1.5);
     },
     setLeft: function(value){
         this.element.style.left = `${value}px`;
