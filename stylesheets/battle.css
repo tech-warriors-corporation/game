@@ -42,6 +42,10 @@
     transform: translateX(-50%);
 }
 
+.battle .battle__atacks--hide{
+    display: none;
+}
+
 .battle .battle__attack{
     --battle-attack-size: 150px;
     --shadow-battle-attack-small: 0 0 8px 0 var(--light-grey);

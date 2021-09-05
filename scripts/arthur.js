@@ -16,8 +16,9 @@ const arthur = {
     walk: function(size){
         return new Promise(resolve => {
             const times = Math.round(size / this.runX);
+            const isBack = times < 0;
 
-            this.setBackgroundPositionY(this._defaultY * 11);
+            this.setBackgroundPositionY(isBack ? this._defaultY * 9 : this._defaultY * 11);
 
             if(!times) resolve();
 
@@ -33,11 +34,11 @@ const arthur = {
                     const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX, true) ||
                                                 utils.pxToNumber(this.element.style.backgroundPositionX, true);
 
-                    this.setLeft(left + this.runX);
+                    this.setLeft(isBack ? left - this.runX : left + this.runX);
                     this.setBackgroundPositionX(backgroundPositionX - 150);
                 }
 
-                counter++
+                isBack ? counter-- : counter++;
             }, this._moveTime);
         })
     },

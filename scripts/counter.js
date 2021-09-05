@@ -11,6 +11,9 @@ const counter = {
     stop: function(){
         this._stop = true;
     },
+    continue: function(){
+        this._stop = false;
+    },
     toggle: function(){
         this._stop = !this._stop;
     },
