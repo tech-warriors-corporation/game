@@ -1,6 +1,7 @@
 .enemy{
     background-image: url(../assets/images/sprite-enemy.png);
     background-size: 1400%;
+    right: 0;
 }
 
 .enemy::after{

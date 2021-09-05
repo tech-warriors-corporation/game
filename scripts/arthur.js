@@ -4,6 +4,9 @@ const arthur = {
     _defaultY: -161.35,
     _defaultLeft: 0,
     _moveTime: 200,
+    getPosition: function(){
+        return arthur.element.offsetLeft + config.widthSprites;
+    },
     setLeft: function(value){
         this.element.style.left = `${value}px`;
     },
@@ -20,7 +23,11 @@ const arthur = {
 
             this.setBackgroundPositionY(isBack ? this._defaultY * 9 : this._defaultY * 11);
 
-            if(!times) resolve();
+            if(!times){
+                resolve();
+
+                return;
+            }
 
             let counter = 0;
 

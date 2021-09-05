@@ -66,7 +66,6 @@
     position: absolute;
     bottom: var(--floor-height);
     display: block;
-    left: 0;
     width: 140px;
     height: 120px;
     background-position: 0 0;

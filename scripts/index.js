@@ -2,6 +2,7 @@ const config = {
     _timeTransitionWindow: 250,
     element: document.querySelector('[data-game]'),
     hideClass: 'game--init',
+    widthSprites: 140,
     changeBackgroundImage: function(url){
         this.element.style.backgroundImage = `url(${url})`;
     },
