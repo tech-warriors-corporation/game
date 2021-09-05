@@ -1,3 +1,13 @@
+@keyframes blink-key {
+    0%{
+        filter: drop-shadow(0 0 8px var(--white));
+    }
+
+    100%{
+        filter: drop-shadow(0 0 16px var(--white));
+    }
+}
+
 .chest{
     --chest-space: calc(var(--space) * 2);
     --chest-shadow: 0 0 24px 12px rgba(var(--black-rgb), .56);
@@ -15,8 +25,37 @@
     transform: translateX(-50%);
     position: absolute;
     box-shadow: inset var(--chest-shadow), var(--chest-shadow);
+    background-image: url(../assets/images/chest-down.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .chest.chest--hide{
     display: none;
+}
+
+.chest .chest__key{
+    --chest-key-position: calc(var(--space) * 3);
+
+    width: 30%;
+    top: var(--chest-key-position);
+    right: var(--chest-key-position);
+    position: absolute;
+    transform: rotateZ(25deg);
+    transition: filter var(--time-transition), transform var(--time-transition), scale var(--time-transition);
+    animation: blink-key alternate infinite var(--time-transition);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.chest .chest__key.chest__key--show{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: rotateZ(0) translate(-50%, -50%) scale(3);
+    filter: drop-shadow(0 0 24px var(--white));
+    animation: none;
+    pointer-events: none;
+    cursor: default;
 }
