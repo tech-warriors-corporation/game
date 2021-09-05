@@ -12,11 +12,13 @@ const chest = {
     show: function(){
         this.element.classList.remove(this.hideClass);
     },
+    endAudio: function(){
+        if(this.audio) this.audio.end();
+    },
     endAssets: function(){
         this.hide();
         this.resetKey();
-
-        if(this.audio) this.audio.end();
+        this.endAudio();
     },
     resetKey: function(){
         this.foundKey = false;
@@ -28,7 +30,10 @@ const chest = {
         this.foundKey = true;
         this.key.classList.add(this.showKeyClass);
 
-        setTimeout(() => this.conclude(), 2000)
+        setTimeout(() => {
+            this.conclude();
+            this.endAudio();
+        }, 3000)
     },
     init: function(){
         this.audio = audio.play('./assets/audios/chest.mp3', { repeat: true });
