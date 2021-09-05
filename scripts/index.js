@@ -91,7 +91,23 @@ const config = {
                         progress.setTitle('Ajude o rei Arthur encontrar a chave do castelo', true);
                         this.changeBackgroundImage('./assets/images/chest-grass.jpeg');
                         chest.init();
+                        chest.conclude = () => this.next(4);
                         counter.init();
+                    });
+                break;
+            case 4:
+                cutscene
+                    .show(
+                        'Último desafio',
+                        'dassdadsasdaasdadsasd.',
+                        {
+                            background: './assets/images/cutscene-castle.jpg',
+                            merlin: './assets/images/cutscene-merlin-four.png',
+                            audio: './assets/audios/cutscene-four.mp3'
+                        }
+                    )
+                    .then(() => {
+                        chest.endAssets();
                     });
                 break;
         }

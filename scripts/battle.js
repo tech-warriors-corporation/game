@@ -48,8 +48,7 @@ const battle = {
                         if(killedHim){
                             battle.endAssets();
                             this.conclude();
-                        }
-                        else{
+                        } else{
                             this.showAttacks();
                             counter.continue();
                         }
