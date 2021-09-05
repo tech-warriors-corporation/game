@@ -46,7 +46,7 @@ const config = {
                         this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
 
                         progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
-                        counter.init(30);
+                        counter.init();
                         bridge.init();
                         bridge.conclude = () => this.next(2);
                     });
@@ -69,7 +69,7 @@ const config = {
 
                         this.changeBackgroundImage('./assets/images/battle.png');
 
-                        counter.init(20);
+                        counter.init(battle.userHitted.bind(battle));
                         battle.init();
                     });
                 break;

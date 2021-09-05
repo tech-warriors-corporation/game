@@ -2,6 +2,7 @@ const enemy = {
     element: document.querySelector('[data-enemy]'),
     runX: 50,
     classes: ['enemy--100', 'enemy--50', 'enemy--0'],
+    upClass: 'enemy--up',
     _life: 100,
     _defaultY: -151,
     _defaultLife: 100,
@@ -45,28 +46,52 @@ const enemy = {
                 return;
             }
 
-            // let counter = 0;
-            //
-            // const interval = setInterval(() => {
-            //     if(counter === times){
-            //         this.setBackgroundPositionX(this._adjustX);
-            //         clearInterval(interval);
-            //         resolve();
-            //     } else{
-            //         const left = utils.pxToNumber(getComputedStyle(this.element).left, true) || utils.pxToNumber(this.element.style.left, true);
-            //         const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX, true) ||
-            //             utils.pxToNumber(this.element.style.backgroundPositionX, true);
-            //
-            //         this.setLeft(isBack ? left - this.runX : left + this.runX);
-            //         this.setBackgroundPositionX(backgroundPositionX - 150);
-            //     }
-            //
-            //     isBack ? counter-- : counter++;
-            // }, this._moveTime);
+            let counter = 0;
+
+            const interval = setInterval(() => {
+                if(counter === times){
+                    this.setBackgroundPositionX(this._adjustX);
+                    clearInterval(interval);
+                    resolve();
+                } else{
+                    const right = utils.pxToNumber(getComputedStyle(this.element).right, true) || utils.pxToNumber(this.element.style.right, true);
+                    const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX, true) ||
+                                                utils.pxToNumber(this.element.style.backgroundPositionX, true);
+
+                    this.setRight(isBack ? right - this.runX : right + this.runX);
+                    this.setBackgroundPositionX(backgroundPositionX - 150);
+                }
+
+                isBack ? counter-- : counter++;
+            }, this._moveTime);
         })
     },
-    attack: function(){
-        return new Promise(resolve => {})
+    punch: function(){
+        this.element.classList.add(this.upClass);
+
+        return new Promise(resolve => {
+            const leftover = 36;
+            const times = 12;
+            let counter = 0;
+
+            this.setBackgroundPositionX(this._adjustX);
+            this.setBackgroundPositionY((this._defaultY * 18) + leftover);
+
+            const interval = setInterval(() => {
+                if(counter === times){
+                    this.setBackgroundPositionX(this._adjustX);
+                    this.element.classList.remove(this.upClass);
+                    clearInterval(interval);
+                    resolve();
+
+                    return;
+                }
+
+                this.setBackgroundPositionX(this.getBackgroundPositionX() - 152);
+
+                counter++;
+            }, this._moveTime);
+        })
     },
     died: function (){
         return new Promise(resolve => {
@@ -125,6 +150,9 @@ const enemy = {
     },
     init: function(){
         this.setLife(this._defaultLife);
+        this.resetPosition();
+    },
+    resetPosition: function(){
         this.setRight(this._defaultRight);
         this.walk(0);
     }

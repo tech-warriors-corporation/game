@@ -28,3 +28,7 @@
 .enemy.enemy--0::after{
     background-color: var(--light-grey);
 }
+
+.enemy.enemy--up{
+    z-index: 1;
+}

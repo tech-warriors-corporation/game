@@ -2,11 +2,9 @@ const arthur = {
     element: document.querySelector('[data-arthur]'),
     runX: 50,
     _defaultY: -161.35,
+    _defaultX: 161.15,
     _defaultLeft: 0,
     _moveTime: 200,
-    getPositionRight: function(){
-        return this.element.offsetLeft + (config.widthSprites * 1.5);
-    },
     setLeft: function(value){
         this.element.style.left = `${value}px`;
     },
@@ -49,6 +47,37 @@ const arthur = {
             }, this._moveTime);
         })
     },
+    hitMe: function(){
+        return new Promise(resolve => {
+            this.setBackgroundPositionY(this._defaultY * 3);
+
+            const times = 6;
+            let counter = 0;
+
+            if(!times){
+                resolve();
+
+                return;
+            }
+
+            const interval = setInterval(() => {
+                if(counter === times){
+                    this.setBackgroundPositionX(0);
+                    clearInterval(interval);
+                    resolve();
+
+                    return;
+                }
+
+                const backgroundPositionX = utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX) ||
+                                            utils.pxToNumber(this.element.style.backgroundPositionX);
+
+                this.setBackgroundPositionX(backgroundPositionX - this._defaultX);
+
+                counter++;
+            }, this._moveTime);
+        })
+    },
     attack: function(type){
         let times = 0;
         let row = null;
@@ -79,7 +108,7 @@ const arthur = {
                     const backgroundPositionX = utils.pxToNumber(this.element.style.backgroundPositionX) ||
                                                 utils.pxToNumber(getComputedStyle(this.element).backgroundPositionX);
 
-                    this.setBackgroundPositionX(backgroundPositionX - 161.25);
+                    this.setBackgroundPositionX(backgroundPositionX - this._defaultX);
                 }
 
                 counter++

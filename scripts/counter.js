@@ -1,5 +1,6 @@
 const counter = {
     element: document.querySelector('[data-counter]'),
+    _callbackLessOne: null,
     _seconds: null,
     seconds: null,
     interval: null,
@@ -18,16 +19,17 @@ const counter = {
         this._stop = !this._stop;
     },
     restart: function(){
-        this.init(this._seconds);
+        this.init(this._callbackLessOne);
     },
-    init: function(seconds){
+    init: function(callbackLessOne){
         if(config.lost) return;
         if(this.interval) clearInterval(this.interval);
 
         this.element.classList.remove(this.alertClass);
         this._stop = false;
-        this._seconds = seconds;
-        this.seconds = seconds;
+        this._callbackLessOne = callbackLessOne;
+        this._seconds = 10;
+        this.seconds = this._seconds;
 
         this.setSecondsText(this.seconds);
 
@@ -36,15 +38,18 @@ const counter = {
 
             this.setSecondsText(this.seconds);
 
-            if(this.seconds <= 10) this.element.classList.add(this.alertClass);
+            if(this.seconds <= 5) this.element.classList.add(this.alertClass);
             else this.element.classList.remove(this.alertClass);
 
             if(this.seconds === 0){
                 clearInterval(this.interval);
 
-                life.lessOne();
+                if(callbackLessOne) callbackLessOne();
+                else {
+                    life.lessOne();
 
-                this.init(this._seconds);
+                    this.init(this._seconds);
+                }
 
                 return;
             }

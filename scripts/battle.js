@@ -5,6 +5,12 @@ const battle = {
     hideContainerButtonsClass: 'battle__atacks--hide',
     hideClass: 'battle--hide',
     audio: null,
+    showAttacks: function(){
+        this.containerButtons.classList.remove(this.hideContainerButtonsClass);
+    },
+    hideAttacks: function(){
+        this.containerButtons.classList.add(this.hideContainerButtonsClass);
+    },
     endAssets: function(){
         this.hide();
 
@@ -15,6 +21,7 @@ const battle = {
     },
     init: function(){
         this.audio = audio.play('./assets/audios/battle.mp3', { repeat: true });
+        this.showAttacks();
         this.element.classList.remove(this.hideClass);
         enemy.init();
         arthur.init();
@@ -24,7 +31,7 @@ const battle = {
         this.buttons.forEach(button => button.onclick = this.select.bind(this));
     },
     select: function(event){
-        this.containerButtons.classList.add(this.hideContainerButtonsClass);
+        this.hideAttacks();
         counter.stop();
 
         const positionEnemy = enemy.getPositionLeft();
@@ -39,12 +46,33 @@ const battle = {
 
                         if(killedHim) this.killedHim();
                         else{
-                            this.containerButtons.classList.remove(this.hideContainerButtonsClass);
-                            counter.restart();
+                            this.showAttacks();
+                            counter.continue();
                         }
                     });
                 });
           });
+        });
+    },
+    userHitted: function(){
+        const distance = enemy.getPositionLeft();
+
+        this.hideAttacks();
+
+        enemy.walk(distance).then(() => {
+            enemy.punch().then(() => {
+                life.lessOne();
+
+                if(!config.lost){
+                    enemy.walk(-distance).then(() => {
+                        counter.restart();
+                        enemy.resetPosition();
+                        this.showAttacks();
+                    });
+                }
+            });
+
+            arthur.hitMe();
         });
     },
     killedHim: function(){
