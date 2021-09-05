@@ -1,11 +1,4 @@
 .arthur{
-    position: absolute;
-    bottom: var(--floor-height);
-    display: block;
-    left: 0;
-    width: 140px;
-    height: 120px;
     background-image: url(../assets/images/sprite-arthur.png);
-    background-position: 0 0;
     background-size: 1000%;
 }

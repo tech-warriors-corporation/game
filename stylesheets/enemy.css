@@ -1,0 +1,22 @@
+.enemy{
+    background-image: url(../assets/images/sprite-enemy.png);
+    background-size: 1400%;
+
+    /*background-position: 6px -95px !important;*/
+    /*left: 200px !important;*/
+}
+
+.enemy::after{
+    content: "";
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    height: 10px;
+    border-radius: var(--radius);
+    top: -24px;
+    position: relative;
+    border: var(--border);
+    border-color: var(--black);
+
+    /*background: linear-gradient(to right, var(--red) 75%, var(--light-grey) 25%);*/
+}
