@@ -1,9 +1,6 @@
 .enemy{
     background-image: url(../assets/images/sprite-enemy.png);
     background-size: 1400%;
-
-    /*background-position: 6px -95px !important;*/
-    /*left: 200px !important;*/
 }
 
 .enemy::after{
@@ -17,6 +14,16 @@
     position: relative;
     border: var(--border);
     border-color: var(--black);
+}
 
-    /*background: linear-gradient(to right, var(--red) 75%, var(--light-grey) 25%);*/
+.enemy.enemy--100::after{
+    background: linear-gradient(to right, var(--red) 100%, var(--light-grey) 0%);
+}
+
+.enemy.enemy--50::after{
+    background: linear-gradient(to right, var(--red) 50%, var(--light-grey) 50%);
+}
+
+.enemy.enemy--0::after{
+    background: linear-gradient(to right, var(--red) 0%, var(--light-grey) 100%);
 }

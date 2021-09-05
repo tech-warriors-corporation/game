@@ -12,6 +12,7 @@ const battle = {
     },
     init: function(){
         this.element.classList.remove(this.hideClass);
+        enemy.init();
         arthur.init();
         this.watchSelection();
     },
@@ -32,5 +33,8 @@ const battle = {
         //               });
         //           });
         // });
+    },
+    killHim: function(){
+        audio.play('./assets/audios/correct.mp3');
     }
 };
