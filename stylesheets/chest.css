@@ -15,11 +15,11 @@
     display: block;
     border: var(--border);
     border-radius: var(--radius);
-    border-width: calc(var(--border-width) * 8);
+    border-width: calc(var(--border-width) * 4);
     border-color: #693b1d;
     background-color: #975627;
-    width: 75%;
-    height: 75%;
+    width: 80%;
+    height: 70%;
     bottom: var(--chest-space);
     left: 50%;
     transform: translateX(-50%);
