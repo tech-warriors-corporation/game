@@ -44,6 +44,7 @@ const config = {
                         life.reset();
                         progress.reset();
                         this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
+                        arthur.show();
                         progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
                         counter.init();
                         bridge.init();
@@ -66,6 +67,7 @@ const config = {
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
                         this.changeBackgroundImage('./assets/images/battle.png');
+                        arthur.show();
                         counter.init(battle.userHitted.bind(battle));
                         battle.init();
                         battle.conclude = () => this.next(3);
@@ -83,10 +85,12 @@ const config = {
                         }
                     )
                     .then(() => {
+                        arthur.hide();
                         battle.hide();
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur encontrar a chave do castelo', true);
                         this.changeBackgroundImage('./assets/images/chest-grass.jpeg');
+                        chest.init();
                         counter.init();
                     });
                 break;
@@ -96,6 +100,7 @@ const config = {
         this.lost = true;
         bridge.endAssets();
         battle.endAssets();
+        chest.endAssets();
         home.show(
             'Infelizmente você perdeu todas as vidas',
             'Tentar novamente',

@@ -5,6 +5,13 @@ const arthur = {
     _defaultX: 161.15,
     _defaultLeft: 0,
     _moveTime: 200,
+    hideClass: 'arthur--hide',
+    hide: function(){
+        this.element.classList.add(this.hideClass);
+    },
+    show: function(){
+        this.element.classList.remove(this.hideClass);
+    },
     setLeft: function(value){
         this.element.style.left = `${value}px`;
     },

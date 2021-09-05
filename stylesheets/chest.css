@@ -1,0 +1,22 @@
+.chest{
+    --chest-space: calc(var(--space) * 2);
+    --chest-shadow: 0 0 24px 12px rgba(var(--black-rgb), .56);
+
+    display: block;
+    border: var(--border);
+    border-radius: var(--radius);
+    border-width: calc(var(--border-width) * 8);
+    border-color: #693b1d;
+    background-color: #975627;
+    width: 75%;
+    height: 75%;
+    bottom: var(--chest-space);
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    box-shadow: inset var(--chest-shadow), var(--chest-shadow);
+}
+
+.chest.chest--hide{
+    display: none;
+}

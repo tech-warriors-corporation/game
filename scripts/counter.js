@@ -48,7 +48,7 @@ const counter = {
                 else {
                     life.lessOne();
 
-                    this.init(this._seconds);
+                    this.init(callbackLessOne);
                 }
 
                 return;

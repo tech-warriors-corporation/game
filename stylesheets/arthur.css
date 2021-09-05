@@ -2,4 +2,9 @@
     background-image: url(../assets/images/sprite-arthur.png);
     background-size: 1000%;
     left: 0;
+    display: block;
+}
+
+.arthur.arthur--hide{
+    display: none;
 }
