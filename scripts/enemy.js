@@ -7,7 +7,7 @@ const enemy = {
     _defaultY: -151,
     _defaultLife: 100,
     _defaultRight: 0,
-    _moveTime: 200,
+    _moveTime: 125,
     _adjustX: 6,
     getPositionLeft: function(){
         return this.element.offsetLeft - (config.widthSprites / 2);

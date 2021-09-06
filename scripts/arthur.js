@@ -4,7 +4,7 @@ const arthur = {
     _defaultY: -161.35,
     _defaultX: 161.15,
     _defaultLeft: 0,
-    _moveTime: 200,
+    _moveTime: 125,
     hideClass: 'arthur--hide',
     hide: function(){
         this.element.classList.add(this.hideClass);

@@ -4,7 +4,7 @@ Game for FriendBot.
 ## Roadmap
 - [ ] Use PhoneGap;
 - [ ] Progress bar with legend;
-- [ ] Minify images, audios, css, and js, concatenate their and others;
+- [ ] Minify images, audios (and cut), css, and js, concatenate their and others;
 - [ ] Life bar;
 - [ ] Do loading cutscene;
 - [ ] Set audio in all game;
@@ -17,4 +17,5 @@ Game for FriendBot.
 - [ ] Login, finish and try again windows;
 - [ ] Each phase (with cutscene and audio);
 - [ ] Audio speed is 1.3 times;
+- [ ] Create ideas for talk in our meeting;
 - [ ] Images, effects, sprites, songs, fonts and more.

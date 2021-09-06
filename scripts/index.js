@@ -46,9 +46,9 @@ const config = {
                         this.changeBackgroundImage('./assets/images/bridge-wallpaper.jpeg');
                         arthur.show();
                         progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
-                        counter.init();
                         bridge.init();
                         bridge.conclude = () => this.next(2);
+                        counter.init();
                     });
                 break;
             case 2:
@@ -64,13 +64,13 @@ const config = {
                     )
                     .then(() => {
                         bridge.hide();
-                        progress.next();
-                        progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
                         this.changeBackgroundImage('./assets/images/battle.png');
                         arthur.show();
-                        counter.init(battle.userHitted.bind(battle));
+                        progress.next();
+                        progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
                         battle.init();
                         battle.conclude = () => this.next(3);
+                        counter.init(battle.userHitted.bind(battle));
                     });
                 break;
             case 3:
@@ -87,9 +87,9 @@ const config = {
                     .then(() => {
                         arthur.hide();
                         battle.hide();
+                        this.changeBackgroundImage('./assets/images/chest-grass.jpeg');
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur encontrar a chave do castelo', true);
-                        this.changeBackgroundImage('./assets/images/chest-grass.jpeg');
                         chest.init();
                         chest.conclude = () => this.next(4);
                         counter.init();
@@ -99,7 +99,7 @@ const config = {
                 cutscene
                     .show(
                         'Último desafio',
-                        'dassdadsasdaasdadsasd.',
+                        'Ajude o Rei Arthur a retirar a espada da pedra e voltar ao trono.',
                         {
                             background: './assets/images/cutscene-castle.jpg',
                             merlin: './assets/images/cutscene-merlin-four.png',
@@ -108,6 +108,12 @@ const config = {
                     )
                     .then(() => {
                         chest.endAssets();
+                        arthur.hide();
+                        this.changeBackgroundImage('./assets/images/castle.png');
+                        progress.next();
+                        progress.setTitle('Ajude o rei Arthur a tirar a espada da pedra para ele voltar ao trono', true);
+                        counter.init();
+                        counter.stop();
                     });
                 break;
         }
@@ -119,7 +125,7 @@ const config = {
         chest.endAssets();
         home.show(
             'Infelizmente você perdeu todas as vidas',
-            'Tentar novamente',
+            'Recomeçar',
             {
                 imageUrl: './assets/images/home-arthur.png',
                 musicUrl: './assets/audios/lose.mp3',

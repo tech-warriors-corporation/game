@@ -15,7 +15,7 @@
     display: block;
     border: var(--border);
     border-radius: var(--radius);
-    border-width: calc(var(--border-width) * 4);
+    border-width: calc(var(--border-width) * 6);
     border-color: #693b1d;
     background-color: #975627;
     width: 80%;
