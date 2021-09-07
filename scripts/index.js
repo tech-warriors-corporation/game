@@ -112,17 +112,16 @@ const config = {
                         this.changeBackgroundImage('./assets/images/castle.png');
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur a tirar a espada da pedra para ele voltar ao trono', true);
+                        castle.init();
+                        castle.conclude = () => this.win();
                         counter.init();
-                        counter.stop();
                     });
                 break;
         }
     },
     lose: function(){
         this.lost = true;
-        bridge.endAssets();
-        battle.endAssets();
-        chest.endAssets();
+        this.endAssets();
         home.show(
             'Infelizmente você perdeu todas as vidas',
             'Recomeçar',
@@ -134,7 +133,22 @@ const config = {
         );
     },
     win: function(){
-
+        this.endAssets();
+        home.show(
+            'Parabéns, você ajudou o rei Arthur',
+            'Jogar novamente',
+            {
+                imageUrl: './assets/images/home-merlin.png',
+                musicUrl: './assets/audios/win.mp3',
+                audioUrl: './assets/audios/help-win.mp3',
+            }
+        );
+    },
+    endAssets: function(){
+        bridge.endAssets();
+        battle.endAssets();
+        chest.endAssets();
+        castle.endAssets();
     }
 };
 

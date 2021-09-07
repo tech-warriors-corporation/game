@@ -89,10 +89,11 @@
                      alt="Chave do castelo">
             </div>
 
-            <div data-castle class="castle">
-                <div class="castle__sword"></div>
+            <div data-castle class="castle castle--hide">
+                <div data-castle-sword class="castle__sword"></div>
                 <div class="castle__rock"></div>
                 <button class="castle__button"
+                        data-castle-click
                         aria-label="Clique várias vezes até retirar a espada">
                 </button>
             </div>
@@ -128,6 +129,7 @@
         <script src="./scripts/battle.js"></script>
         <script src="./scripts/enemy.js"></script>
         <script src="./scripts/chest.js"></script>
+        <script src="./scripts/castle.js"></script>
         <script src="./scripts/index.js"></script>
     </body>
 </html>

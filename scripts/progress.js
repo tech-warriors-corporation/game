@@ -40,7 +40,5 @@ const progress = {
             this.bar.style.width = this.currentBarWidth();
             nextItem.classList.add(this.activeItemClass);
         }
-
-        if(!nextIndexItem) config.win();
     }
 };
