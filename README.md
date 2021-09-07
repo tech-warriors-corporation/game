@@ -8,7 +8,7 @@ Game for FriendBot.
 - [X] Life bar;
 - [X] Do loading cutscene;
 - [X] Set audio in all game;
-- [ ] Delete unused files;
+- [X] Delete unused files;
 - [X] Timer seconds;
 - [X] Character with sprite;
 - [ ] Counter time each phase speak with group;

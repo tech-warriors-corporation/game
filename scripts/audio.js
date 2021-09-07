@@ -4,7 +4,7 @@ const audio = {
 
         const audioPlayed = new Audio(url);
 
-        audioPlayed.volume = assets.volume || 0.1;
+        audioPlayed.volume = assets.volume || 0.25;
         audioPlayed.play();
 
         audioPlayed.onended = () => {
