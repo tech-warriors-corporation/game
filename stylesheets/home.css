@@ -11,10 +11,6 @@
     opacity: 1;
 }
 
-.home.home--none{
-    display: none;
-}
-
 .home::after{
     background-color: rgb(var(--black-rgb), .72);
 }

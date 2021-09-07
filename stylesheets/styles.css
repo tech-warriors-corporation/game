@@ -76,4 +76,7 @@
     visibility: hidden;
     z-index: -1;
     text-indent: -9999px;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
 }

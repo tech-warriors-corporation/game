@@ -5,7 +5,7 @@ const cutscene = {
     loading: document.querySelector('[data-cutscene-loading]'),
     title: document.querySelector('[data-cutscene-title]'),
     activeClass: 'cutscene--show',
-    hideClass: 'cutscene--none',
+    hideClass: 'hide',
     setLoading: function(){
         const text = 'Carregando';
         const currentText = this.loading.textContent;

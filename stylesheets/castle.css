@@ -24,10 +24,6 @@
     position: relative;
 }
 
-.castle.castle--hide{
-    display: none;
-}
-
 .castle .castle__button{
     --castle-button-size: 146px;
     --castle-button-distance: calc(var(--space) * 2);

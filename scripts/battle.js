@@ -2,8 +2,8 @@ const battle = {
     element: document.querySelector('[data-battle]'),
     buttons: document.querySelectorAll('[data-battle-attack]'),
     containerButtons: document.querySelector('[data-battle-attacks]'),
-    hideContainerButtonsClass: 'battle__atacks--hide',
-    hideClass: 'battle--hide',
+    hideContainerButtonsClass: 'hide',
+    hideClass: 'hide',
     audio: null,
     conclude: () => {},
     showAttacks: function(){

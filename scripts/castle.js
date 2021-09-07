@@ -6,7 +6,7 @@ const castle = {
     _defaultUpDownValue: 15,
     audio: null,
     interval: null,
-    hideClass: 'castle--hide',
+    hideClass: 'hide',
     upSwordClass: 'castle__sword--up',
     conclude: () => {},
     win: function(){

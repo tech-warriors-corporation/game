@@ -31,10 +31,6 @@
     background-size: cover;
 }
 
-.chest.chest--hide{
-    display: none;
-}
-
 .chest .chest__key{
     --chest-key-position: calc(var(--space) * 3);
 

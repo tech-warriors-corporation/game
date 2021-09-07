@@ -20,10 +20,6 @@
     height: 100%;
 }
 
-.battle.battle--hide{
-    display: none;
-}
-
 .battle .battle__floor{
     --floor-battle-color: #8ba949;
 
@@ -40,10 +36,6 @@
     top: 30%;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.battle .battle__atacks--hide{
-    display: none;
 }
 
 .battle .battle__attack{

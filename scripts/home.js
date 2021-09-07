@@ -3,7 +3,7 @@ const home = {
     button: document.querySelector('[data-home-button]'),
     title: document.querySelector('[data-home-title]'),
     activeClass: 'home--show',
-    hideClass: 'home--none',
+    hideClass: 'hide',
     isActive: function(){
         return this.element.classList.contains(this.activeClass);
     },

@@ -1,7 +1,7 @@
 const chest = {
     element: document.querySelector('[data-chest]'),
     key: document.querySelector('[data-chest-key]'),
-    hideClass: 'chest--hide',
+    hideClass: 'hide',
     showKeyClass: 'chest__key--show',
     foundKey: false,
     audio: null,
