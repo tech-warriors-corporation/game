@@ -18,4 +18,5 @@ Game for FriendBot.
 - [X] Each phase (with cutscene and audio);
 - [X] Audio speed is 1.3 times;
 - [ ] Create ideas for talk in our meeting;
+- [ ] Do manual in HTML for help users;
 - [X] Images, effects, sprites, songs, fonts and more.
