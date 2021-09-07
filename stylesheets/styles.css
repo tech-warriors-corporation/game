@@ -71,3 +71,9 @@
     height: 120px;
     background-position: 0 0;
 }
+
+.hide{
+    visibility: hidden;
+    z-index: -1;
+    text-indent: -9999px;
+}
