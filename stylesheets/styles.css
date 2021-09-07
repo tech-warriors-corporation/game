@@ -73,10 +73,12 @@
 }
 
 .hide{
+    --hide-position: -9999px;
+
     visibility: hidden;
     z-index: -1;
-    text-indent: -9999px;
+    text-indent: var(--hide-position);
     position: absolute;
-    left: -9999px;
-    top: -9999px;
+    left: var(--hide-position);
+    top: var(--hide-position);
 }
