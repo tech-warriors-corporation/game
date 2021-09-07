@@ -127,7 +127,7 @@ const enemy = {
         this.setBackgroundPositionY(this._defaultY + leftover);
         this.setBackgroundPositionX(this._adjustX);
 
-        audio.play('./assets/audios/hit-him.wav');
+        audio.play('./assets/audios/hit-him.mp3');
 
         return new Promise(resolve => {
             const interval = setInterval(() => {

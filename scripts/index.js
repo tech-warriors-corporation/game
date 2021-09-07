@@ -23,7 +23,7 @@ const config = {
                         'Em busca da coroa',
                         'Jogar',
                         {
-                            imageUrl: './assets/images/home-arthur-and-merlin.png',
+                            imageUrl: './assets/images/home-arthur-and-merlin.jpeg',
                             musicUrl: './assets/audios/home.mp3',
                             audioUrl: './assets/audios/help-home.mp3',
                         }
@@ -35,7 +35,7 @@ const config = {
                         'Primeiro desafio',
                         'Ajude o Rei Arthur a atravessar a ponte completando com a forma geométrica correta.',
                         {
-                            background: './assets/images/cutscene-bridge.jpg',
+                            background: './assets/images/cutscene-bridge.jpeg',
                             merlin: './assets/images/cutscene-merlin-one.png',
                             audio: './assets/audios/cutscene-one.mp3'
                         }
@@ -57,14 +57,14 @@ const config = {
                         'Segundo desafio',
                         'Ajude o Rei Arthur a passar por seu inimigo com suas habilidades.',
                         {
-                            background: './assets/images/cutscene-battle.jpg',
+                            background: './assets/images/cutscene-battle.jpeg',
                             merlin: './assets/images/cutscene-merlin-two.png',
                             audio: './assets/audios/cutscene-two.mp3'
                         }
                     )
                     .then(() => {
                         bridge.hide();
-                        this.changeBackgroundImage('./assets/images/battle.png');
+                        this.changeBackgroundImage('./assets/images/battle.jpeg');
                         arthur.show();
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
@@ -79,7 +79,7 @@ const config = {
                         'Terceiro desafio',
                         'Ajude o Rei Arthur a achar a chave do castelo no meio dos objetos.',
                         {
-                            background: './assets/images/cutscene-chest.jpg',
+                            background: './assets/images/cutscene-chest.jpeg',
                             merlin: './assets/images/cutscene-merlin-three.png',
                             audio: './assets/audios/cutscene-three.mp3'
                         }
@@ -101,7 +101,7 @@ const config = {
                         'Último desafio',
                         'Ajude o Rei Arthur a retirar a espada da pedra e voltar ao trono.',
                         {
-                            background: './assets/images/cutscene-castle.jpg',
+                            background: './assets/images/cutscene-castle.jpeg',
                             merlin: './assets/images/cutscene-merlin-four.png',
                             audio: './assets/audios/cutscene-four.mp3'
                         }
@@ -109,7 +109,7 @@ const config = {
                     .then(() => {
                         chest.endAssets();
                         arthur.hide();
-                        this.changeBackgroundImage('./assets/images/castle.png');
+                        this.changeBackgroundImage('./assets/images/castle.jpeg');
                         progress.next();
                         progress.setTitle('Ajude o rei Arthur a tirar a espada da pedra para ele voltar ao trono', true);
                         castle.init();
@@ -126,7 +126,7 @@ const config = {
             'Infelizmente você perdeu todas as vidas',
             'Recomeçar',
             {
-                imageUrl: './assets/images/home-arthur.png',
+                imageUrl: './assets/images/home-arthur.jpeg',
                 musicUrl: './assets/audios/lose.mp3',
                 audioUrl: './assets/audios/help-lose.mp3',
             }
@@ -138,7 +138,7 @@ const config = {
             'Parabéns, você ajudou o rei Arthur',
             'Jogar novamente',
             {
-                imageUrl: './assets/images/home-merlin.png',
+                imageUrl: './assets/images/home-merlin.jpeg',
                 musicUrl: './assets/audios/win.mp3',
                 audioUrl: './assets/audios/help-win.mp3',
             }

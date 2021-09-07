@@ -3,19 +3,19 @@ Game for FriendBot.
 
 ## Roadmap
 - [ ] Use PhoneGap;
-- [ ] Progress bar with legend;
-- [ ] Minify images, audios (and cut), css, and js, concatenate their and others;
-- [ ] Life bar;
-- [ ] Do loading cutscene;
-- [ ] Set audio in all game;
+- [X] Progress bar with legend;
+- [ ] Minify images, audios (and cut), css, and js, concatenate their and others on `/dist`;
+- [X] Life bar;
+- [X] Do loading cutscene;
+- [X] Set audio in all game;
 - [ ] Delete unused files;
-- [ ] Timer seconds;
-- [ ] Character with sprite;
+- [X] Timer seconds;
+- [X] Character with sprite;
 - [ ] Counter time each phase speak with group;
-- [ ] Button (and with animation);
-- [ ] Shadow click animation (triangle, square, buttons and more);
-- [ ] Login, finish and try again windows;
-- [ ] Each phase (with cutscene and audio);
-- [ ] Audio speed is 1.3 times;
+- [X] Button (and with animation);
+- [X] Shadow click animation (triangle, square, buttons and more);
+- [X] Home, win and lose windows;
+- [X] Each phase (with cutscene and audio);
+- [X] Audio speed is 1.3 times;
 - [ ] Create ideas for talk in our meeting;
-- [ ] Images, effects, sprites, songs, fonts and more.
+- [X] Images, effects, sprites, songs, fonts and more.
