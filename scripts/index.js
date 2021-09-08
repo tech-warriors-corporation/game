@@ -126,7 +126,7 @@ const config = {
             'Infelizmente você perdeu todas as vidas',
             'Recomeçar',
             {
-                imageUrl: './assets/images/home-arthur.jpeg',
+                imageUrl: './assets/images/home-merlin.jpeg',
                 musicUrl: './assets/audios/lose.mp3',
                 audioUrl: './assets/audios/help-lose.mp3',
             }
@@ -138,7 +138,7 @@ const config = {
             'Parabéns, você ajudou o rei Arthur',
             'Jogar novamente',
             {
-                imageUrl: './assets/images/home-merlin.jpeg',
+                imageUrl: './assets/images/home-arthur.jpeg',
                 musicUrl: './assets/audios/win.mp3',
                 audioUrl: './assets/audios/help-win.mp3',
             }

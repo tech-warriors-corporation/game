@@ -23,10 +23,10 @@ We host the game on Netlify, in link: [game](https://em-busca-da-coroa.netlify.a
 - [X] Create ideas for talk in our meeting;
 - [ ] Do manual in HTML for help users, create subjects;
 - [X] Images, effects, sprites, songs, fonts and more;
-- [ ] First phase: 15 seconds;
-- [ ] Second phase: 8 seconds;
-- [ ] Third phase: 5 seconds;
-- [ ] Fourth phase: 12 seconds;
+- [X] First phase: 15 seconds;
+- [X] Second phase: 8 seconds;
+- [X] Third phase: 5 seconds;
+- [X] Fourth phase: 12 seconds;
 - [ ] Last challenge with click in correct moment for not use zoom;
 - [ ] Receive cutscenes' audios by Ricce (four audios);
-- [ ] Separate storytelling from first cutscene (compress and more).
+- [X] Separate storytelling from first cutscene (compress and more).
