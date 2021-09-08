@@ -48,7 +48,7 @@ const config = {
                         progress.setTitle('Ajude o rei Arthur a atravessar a ponte, complete a ponte com uma forma geométrica', true);
                         bridge.init();
                         bridge.conclude = () => this.next(2);
-                        counter.init();
+                        counter.init(null, 15);
                     });
                 break;
             case 2:
@@ -70,7 +70,7 @@ const config = {
                         progress.setTitle('Ajude o rei Arthur a passar por seu inimigo');
                         battle.init();
                         battle.conclude = () => this.next(3);
-                        counter.init(battle.userHitted.bind(battle));
+                        counter.init(battle.userHitted.bind(battle), 8);
                     });
                 break;
             case 3:
@@ -92,7 +92,7 @@ const config = {
                         progress.setTitle('Ajude o rei Arthur encontrar a chave do castelo', true);
                         chest.init();
                         chest.conclude = () => this.next(4);
-                        counter.init();
+                        counter.init(null, 5);
                     });
                 break;
             case 4:
@@ -114,7 +114,7 @@ const config = {
                         progress.setTitle('Ajude o rei Arthur a tirar a espada da pedra para ele voltar ao trono', true);
                         castle.init();
                         castle.conclude = () => this.win();
-                        counter.init();
+                        counter.init(null, 12);
                     });
                 break;
         }

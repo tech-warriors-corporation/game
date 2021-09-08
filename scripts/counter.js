@@ -19,16 +19,16 @@ const counter = {
         this._stop = !this._stop;
     },
     restart: function(){
-        this.init(this._callbackLessOne);
+        this.init(this._callbackLessOne, this._seconds);
     },
-    init: function(callbackLessOne){
+    init: function(callbackLessOne, seconds){
         if(config.lost) return;
         if(this.interval) clearInterval(this.interval);
 
         this.element.classList.remove(this.alertClass);
         this._stop = false;
         this._callbackLessOne = callbackLessOne;
-        this._seconds = 10;
+        this._seconds = seconds;
         this.seconds = this._seconds;
 
         this.setSecondsText(this.seconds);
@@ -48,7 +48,7 @@ const counter = {
                 else {
                     life.lessOne();
 
-                    this.init(callbackLessOne);
+                    this.init(callbackLessOne, this._seconds);
                 }
 
                 return;
