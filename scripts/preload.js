@@ -18,6 +18,7 @@ const preload = {
             './assets/images/icon-chest.png',
             './assets/images/icon-click.png',
             './assets/images/icon-sword.png',
+            './assets/images/icon-block.png',
             './assets/images/bridge-circle.png',
             './assets/images/bridge-grass.jpeg',
             './assets/images/bridge-square.png',
@@ -61,6 +62,7 @@ const preload = {
             './assets/audios/help-win.mp3',
             './assets/audios/lose.mp3',
             './assets/audios/win.mp3',
+            './assets/audios/storytelling.mp3',
         ];
 
         for(const url of urls){

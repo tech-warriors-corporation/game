@@ -27,6 +27,6 @@ We host the game on Netlify, in link: [game](https://em-busca-da-coroa.netlify.a
 - [X] Second phase: 8 seconds;
 - [X] Third phase: 5 seconds;
 - [X] Fourth phase: 12 seconds;
-- [ ] Last challenge with click in correct moment for not use zoom;
+- [X] Last challenge with click in correct moment for not use zoom;
 - [ ] Receive cutscenes' audios by Ricce (four audios);
 - [X] Separate storytelling from first cutscene (compress and more).
