@@ -8,11 +8,17 @@
     --white-rgb: 255, 255, 255;
     --blue: #304ffe;
     --red: #d50000;
+    --light-red: #ef3939;
+    --dark-red: #930000;
     --red-rgb: 213, 0, 0;
     --light-grey: #e0e0e0;
     --grey: #bdbdbd;
     --green: #00e676;
+    --light-green: #55f5a6;
+    --dark-green: #00ab58;
     --yellow: #ffeb3b;
+    --light-yellow: #f8e75d;
+    --dark-yellow: #e9d736;
     --space: 16px;
     --half-space: calc(var(--space) / 2);
     --border-width: 4px;

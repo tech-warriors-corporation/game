@@ -21,7 +21,7 @@ We host the game on Netlify, in link: [game](https://em-busca-da-coroa.netlify.a
 - [X] Each phase (with cutscene and audio);
 - [X] Audio speed is 1.3 times;
 - [X] Create ideas for talk in our meeting;
-- [ ] Do manual in HTML for help users, create subjects;
+- [ ] Do manual in HTML for help users, set audios, create subjects;
 - [X] Images, effects, sprites, songs, fonts and more;
 - [X] First phase: 15 seconds;
 - [X] Second phase: 8 seconds;

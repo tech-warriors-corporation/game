@@ -29,12 +29,13 @@
     --castle-button-distance: calc(var(--space) * 2);
     --castle-button-border-width: calc(var(--border-width) * 4);
 
-    background-color: var(--white);
+    background-color: var(--red);
     border-radius: var(--radius);
-    border-bottom: var(--border);
+    border: var(--border);
     border-bottom-width: var(--castle-button-border-width);
+    border-bottom-color: var(--light-red);
     border-right-width: var(--castle-button-border-width);
-    border-right-color: var(--grey);
+    border-right-color: var(--dark-red);
     border-top: 0;
     border-left: 0;
     position: absolute;
@@ -45,12 +46,21 @@
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;
-    background-image: url(../assets/images/icon-click.png);
-    animation: move-border infinite alternate var(--speed-transition);
+    background-image: url(../assets/images/icon-block.png);
+    animation: none;
     cursor: pointer;
+    padding: 0;
 }
 
-.castle .castle__button:hover, .castle .castle__button:active{
+.castle .castle__button.castle__button--click{
+    background-image: url(../assets/images/icon-click.png);
+    animation: move-border infinite alternate var(--speed-transition);
+    background-color: var(--green);
+    border-bottom-color: var(--light-green);
+    border-right-color: var(--dark-green);
+}
+
+.castle .castle__button.castle__button--click:hover, .castle .castle__button.castle__button--click:active{
     animation: none;
 }
 
