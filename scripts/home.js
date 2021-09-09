@@ -2,6 +2,7 @@ const home = {
     element: document.querySelector('[data-home]'),
     button: document.querySelector('[data-home-button]'),
     title: document.querySelector('[data-home-title]'),
+    manual: document.querySelector('[data-home-manual]'),
     activeClass: 'home--show',
     hideClass: 'hide',
     isActive: function(){
@@ -9,6 +10,8 @@ const home = {
     },
     show: function(title, buttonName, assets){
         if(this.isActive()) return;
+
+        assets.showManual ? this.manual.classList.remove(this.hideClass) : this.manual.classList.add(this.hideClass);
 
         const musicHome = audio.play(assets.musicUrl, { repeat: true });
         const audioHome = audio.play(assets.audioUrl, { repeat: false, volume: 1 });

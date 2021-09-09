@@ -26,6 +26,7 @@ const config = {
                             imageUrl: './assets/images/home-arthur-and-merlin.jpeg',
                             musicUrl: './assets/audios/home.mp3',
                             audioUrl: './assets/audios/help-home.mp3',
+                            showManual: true
                         }
                     );
                 }

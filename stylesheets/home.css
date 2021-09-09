@@ -23,3 +23,9 @@
     max-width: 1000px;
     text-align: center;
 }
+
+.home .home__button.home__button--manual{
+    position: absolute;
+    right: var(--space);
+    bottom: var(--space);
+}

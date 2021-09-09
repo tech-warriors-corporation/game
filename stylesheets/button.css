@@ -6,8 +6,11 @@
     padding: var(--space) calc(var(--space) * 2);
     font-weight: 600;
     cursor: pointer;
-    transition: opacity var(--speed-transition), font-size var(--speed-transition), box-shadow var(--speed-transition);
+    transition: opacity var(--speed-transition), box-shadow var(--speed-transition);
     color: var(--black);
+    display: flex;
+    align-items: center;
+    column-gap: var(--space);
 }
 
 .button:hover{
@@ -20,6 +23,23 @@
     box-shadow: 0 0 12px 0 var(--yellow);
 }
 
-.button:hover, .button:active{
-    font-size: 54px;
+.button.button--white{
+    background-color: var(--white);
+}
+
+.button.button--white:hover{
+    opacity: .95;
+    box-shadow: 0 0 8px 0 var(--white);
+}
+
+.button.button--white:active{
+    opacity: .85;
+    box-shadow: 0 0 12px 0 var(--white);
+}
+
+.button .button__icon{
+    --button-icon-size: 46px;
+
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
 }
