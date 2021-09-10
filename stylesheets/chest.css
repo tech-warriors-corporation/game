@@ -16,7 +16,7 @@
     border: var(--border);
     border-radius: var(--radius);
     border-width: calc(var(--border-width) * 6);
-    border-color: #693b1d;
+    border-color: var(--brown);
     background-color: #975627;
     width: 80%;
     height: calc(100% - 165px);
