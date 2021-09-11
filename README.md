@@ -5,9 +5,9 @@ Game based on the King Arthur movie, with progress, limited lives, storytelling 
 We host the game on Netlify, in link: [game](https://em-busca-da-coroa.netlify.app).
 
 ## Roadmap
-- [ ] Add Gulp;
+- [X] Add Gulp;
 - [X] Progress bar with legend;
-- [ ] Minify images, audios (and cut), css, and js, concatenate their and others on `/dist`;
+- [X] Minify images, audios (and cut), css, and js, concatenate their and others on `/dist`;
 - [X] Life bar;
 - [X] Do loading cutscene;
 - [X] Set audio in all game;
